@@ -4,7 +4,7 @@
 
 ## About
 
-With this repository, I provide implementations of commonly used data types and structures in different programming languages.
+With this project, I provide implementations of commonly used data types and structures in different programming languages.
 
 ## Aims
 
@@ -21,6 +21,12 @@ With this repository, I particularly strive to
 Finally, I aim to
 
 * showcase this experience and knowledge.
+
+## Status
+
+Currently, implementations of different data types and structures are available in
+
+* [Java](java/).
 
 ## License
 
