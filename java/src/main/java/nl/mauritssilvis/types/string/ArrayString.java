@@ -11,4 +11,9 @@ public class ArrayString implements String {
     public int length() {
         return chars.length;
     }
+
+    @Override
+    public char charAt(int index) {
+        return chars[index];
+    }
 }

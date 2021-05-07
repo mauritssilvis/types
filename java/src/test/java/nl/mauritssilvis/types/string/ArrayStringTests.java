@@ -5,18 +5,48 @@ import org.junit.jupiter.api.Test;
 
 class ArrayStringTests {
     @Test
-    void getTheLengthOfAZeroCharacterWord() {
-        char[] characters = {};
-        String word = new ArrayString(characters);
+    void getTheLengthOfAZeroCharacterString() {
+        char[] chars = {};
+        String word = new ArrayString(chars);
 
-        Assertions.assertEquals(characters.length, word.length());
+        Assertions.assertEquals(chars.length, word.length());
     }
 
     @Test
-    void getTheLengthOfAFourCharacterWord() {
-        char[] characters = {'w', 'o', 'r', 'd'};
-        String word = new ArrayString(characters);
+    void getTheLengthOfAFourCharacterString() {
+        char[] chars = {'w', 'o', 'r', 'd'};
+        String word = new ArrayString(chars);
 
-        Assertions.assertEquals(characters.length, word.length());
+        Assertions.assertEquals(chars.length, word.length());
+    }
+
+    @Test
+    void doNotGetACharacterWithANegativeIndex() {
+        char[] chars = {};
+        String word = new ArrayString(chars);
+
+        int index = -1;
+
+        Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> word.charAt(index));
+    }
+
+    @Test
+    void getTheZerothCharacterOfAFourCharacterString() {
+        char[] chars = {'w', 'o', 'r', 'd'};
+        String word = new ArrayString(chars);
+
+        int index = 0;
+
+        Assertions.assertEquals(chars[index], word.charAt(index));
+    }
+
+    @Test
+    void doNotGetACharacterBeyondTheStringLength() {
+        char[] chars = {'w', 'o', 'r', 'd'};
+        String word = new ArrayString(chars);
+
+        int index = chars.length;
+
+        Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> word.charAt(index));
     }
 }
