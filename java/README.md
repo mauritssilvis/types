@@ -6,6 +6,12 @@
 
 With this part of the [Types](https://github.com/mauritssilvis/types) project, I provide implementations of commonly used data types and structures in Java.
 
+## Status
+
+Currently, (partial) Java implementations of the following data types and structures are available:
+
+* [String](src/main/java/nl/mauritssilvis/types/string).
+
 ## License
 
 Copyright © 2021 Maurits H. Silvis
