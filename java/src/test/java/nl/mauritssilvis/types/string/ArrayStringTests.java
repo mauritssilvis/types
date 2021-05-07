@@ -5,22 +5,6 @@ import org.junit.jupiter.api.Test;
 
 class ArrayStringTests {
     @Test
-    void getTheLengthOfAZeroCharacterString() {
-        char[] chars = {};
-        String word = new ArrayString(chars);
-
-        Assertions.assertEquals(chars.length, word.length());
-    }
-
-    @Test
-    void getTheLengthOfAFourCharacterString() {
-        char[] chars = {'w', 'o', 'r', 'd'};
-        String word = new ArrayString(chars);
-
-        Assertions.assertEquals(chars.length, word.length());
-    }
-
-    @Test
     void doNotGetACharacterWithANegativeIndex() {
         char[] chars = {};
         String word = new ArrayString(chars);
@@ -48,5 +32,21 @@ class ArrayStringTests {
         int index = chars.length;
 
         Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> word.charAt(index));
+    }
+
+    @Test
+    void getTheLengthOfAZeroCharacterString() {
+        char[] chars = {};
+        String word = new ArrayString(chars);
+
+        Assertions.assertEquals(chars.length, word.length());
+    }
+
+    @Test
+    void getTheLengthOfAFourCharacterString() {
+        char[] chars = {'w', 'o', 'r', 'd'};
+        String word = new ArrayString(chars);
+
+        Assertions.assertEquals(chars.length, word.length());
     }
 }

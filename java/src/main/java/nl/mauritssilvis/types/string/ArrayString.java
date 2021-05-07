@@ -8,12 +8,12 @@ public class ArrayString implements String {
     }
 
     @Override
-    public int length() {
-        return chars.length;
+    public char charAt(int index) {
+        return chars[index];
     }
 
     @Override
-    public char charAt(int index) {
-        return chars[index];
+    public int length() {
+        return chars.length;
     }
 }
