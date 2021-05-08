@@ -36,7 +36,7 @@ class ArrayStringTests {
 
     @Test
     void acceptAJavaString() {
-        java.lang.String str = "field";
+        java.lang.String str = "sea";
         Assertions.assertDoesNotThrow(() -> new ArrayString(str));
     }
 
@@ -56,7 +56,7 @@ class ArrayStringTests {
 
     @Test
     void doNotGetACharacterWithANegativeIndex() {
-        char[] chars = {};
+        char[] chars = {'l', 'a', 'k', 'e'};
         String word = new ArrayString(chars);
 
         int index = -1;
@@ -65,23 +65,26 @@ class ArrayStringTests {
     }
 
     @Test
-    void getTheZerothCharacterOfAFourCharacterString() {
-        char[] chars = {'w', 'o', 'r', 'd'};
-        String word = new ArrayString(chars);
-
-        int index = 0;
-
-        Assertions.assertEquals(chars[index], word.charAt(index));
-    }
-
-    @Test
     void doNotGetACharacterBeyondTheStringLength() {
-        char[] chars = {'w', 'o', 'r', 'd'};
+        char[] chars = {'m', 'o', 'u', 'n', 't', 'a', 'i', 'm'};
         String word = new ArrayString(chars);
 
         int index = chars.length;
 
         Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> word.charAt(index));
+    }
+
+    @Test
+    void getEachCharacter() {
+        char[] chars = {'l', 'a', 'n', 'd'};
+        String word = new ArrayString(chars);
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(chars[0], word.charAt(0)),
+                () -> Assertions.assertEquals(chars[1], word.charAt(1)),
+                () -> Assertions.assertEquals(chars[2], word.charAt(2)),
+                () -> Assertions.assertEquals(chars[3], word.charAt(3))
+        );
     }
 
     @Test
@@ -94,7 +97,7 @@ class ArrayStringTests {
 
     @Test
     void getTheLengthOfAFourCharacterString() {
-        char[] chars = {'w', 'o', 'r', 'd'};
+        char[] chars = {'h', 'i', 'l', 'l'};
         String word = new ArrayString(chars);
 
         Assertions.assertEquals(chars.length, word.length());
