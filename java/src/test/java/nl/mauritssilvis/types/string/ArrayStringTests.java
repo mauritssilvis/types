@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 class ArrayStringTests {
     @Test
-    void acceptACharArray() {
+    void acceptAnArrayOfCharacters() {
         char[] chars = {'e', 'a', 'r', 't', 'h'};
         Assertions.assertDoesNotThrow(() -> new ArrayString(chars));
     }
 
     @Test
-    void storeAnIndependentCopyOfTheInputCharArray() {
+    void storeAnIndependentCopyOfTheCharacters() {
         char[] chars = {'s', 'u', 'n'};
         String word = new ArrayString(chars);
 
