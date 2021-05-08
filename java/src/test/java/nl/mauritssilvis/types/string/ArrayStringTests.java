@@ -226,9 +226,25 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNotEqualToADifferentStringOfTheSameSize() {
+    void isNotEqualToADifferentStringOfTheSameSizeWithDifferentCharacters() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("beach");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void isNotEqualToADifferentStringOfTheSameSizeWithSimilarCharacters() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("comet");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void isNotEqualToADifferentStringOfTheSameSizeWithTheSameCharacters() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("costa");
 
         Assertions.assertFalse(str1.equals(str2));
     }
