@@ -3,6 +3,8 @@ package nl.mauritssilvis.types.string;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
+
 class ArrayStringTests {
     @Test
     void acceptAnArrayOfCharacters() {
@@ -295,6 +297,101 @@ class ArrayStringTests {
         String str2 = new ArrayString("coast");
 
         Assertions.assertTrue(str1.equals(str2));
+    }
+
+    @Test
+    void hasADifferentHashCodeThanNull() {
+        String str = new ArrayString("coast");
+
+        Assertions.assertNotEquals(str.hashCode(), Objects.hashCode(null));
+    }
+
+    @Test
+    void hasADifferentHashCodeThanAnEmptyString() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasADifferentHashCodeThanItsFirstCharacter() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("c");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasADifferentHashCodeThanItsLastCharacter() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("t");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasADifferentHashCodeThanItsBeginning() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("co");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasADifferentHashCodeThanItsEnding() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("oast");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasADifferentHashCodeThanADifferentlySizedString() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("sand");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasADifferentHashCodeThanAStringOfTheSameSize() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("beach");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasADifferentHashCodeThanAStringWithSimilarCharacters() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("comet");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasADifferentHashCodeThanAnAnagram() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("costa");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasTheSameHashCodeAsTheSameString() {
+        String str1 = new ArrayString("coast");
+        String str2 = str1;
+
+        Assertions.assertEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasTheSameHashCodeAsAStringWithTheSameContents() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("coast");
+
+        Assertions.assertEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test

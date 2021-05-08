@@ -1,5 +1,7 @@
 package nl.mauritssilvis.types.string;
 
+import java.util.Arrays;
+
 public class ArrayString implements String {
     private final char[] chars;
 
@@ -49,6 +51,11 @@ public class ArrayString implements String {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(chars);
     }
 
     @Override
