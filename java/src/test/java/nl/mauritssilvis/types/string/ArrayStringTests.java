@@ -5,6 +5,17 @@ import org.junit.jupiter.api.Test;
 
 class ArrayStringTests {
     @Test
+    void storeAnIndependentCopyOfTheInputData() {
+        char[] chars = {'b', 'o', 'a', 't'};
+        String word = new ArrayString(chars);
+
+        int index = 2;
+        chars[index] = 'o';
+        
+        Assertions.assertNotEquals(chars[index], word.charAt(index));
+    }
+
+    @Test
     void doNotGetACharacterWithANegativeIndex() {
         char[] chars = {};
         String word = new ArrayString(chars);

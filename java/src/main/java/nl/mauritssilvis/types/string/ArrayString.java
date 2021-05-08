@@ -4,7 +4,7 @@ public class ArrayString implements String {
     private final char[] chars;
 
     public ArrayString(char[] chars) {
-        this.chars = chars;
+        this.chars = chars.clone();
     }
 
     @Override
