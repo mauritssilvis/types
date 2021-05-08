@@ -217,4 +217,20 @@ class ArrayStringTests {
 
         Assertions.assertEquals(javaStr.length(), str.length());
     }
+
+    @Test
+    void convertFromACharacterArrayToAJavaString() {
+        char[] chars = {'l', 'a', 'n', 'd'};
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(new java.lang.String(chars), str.toString());
+    }
+
+    @Test
+    void convertFromAndToAJavaString() {
+        java.lang.String javaStr = "stone";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertEquals(javaStr, str.toString());
+    }
 }

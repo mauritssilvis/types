@@ -32,4 +32,9 @@ public class ArrayString implements String {
     public int length() {
         return chars.length;
     }
+
+    @Override
+    public java.lang.String toString() {
+        return new java.lang.String(chars);
+    }
 }
