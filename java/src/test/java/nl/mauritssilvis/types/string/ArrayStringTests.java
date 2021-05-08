@@ -204,7 +204,7 @@ class ArrayStringTests {
 
     @Test
     void getTheLengthOfAFourCharacterString() {
-        char[] chars = {'p', 'l', 'a', 'n', 't'};
+        char[] chars = {'t', 'r', 'e', 'e'};
         String str = new ArrayString(chars);
 
         Assertions.assertEquals(chars.length, str.length());
