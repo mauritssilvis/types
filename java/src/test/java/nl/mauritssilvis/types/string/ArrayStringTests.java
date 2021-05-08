@@ -12,14 +12,15 @@ class ArrayStringTests {
 
     @Test
     void storeAllCharacters() {
-        char[] chars = {'s', 'k', 'y'};
+        char[] chars = {'m', 'o', 'o', 'n'};
         String str = new ArrayString(chars);
 
         Assertions.assertAll(
                 () -> Assertions.assertEquals(chars.length, str.length()),
                 () -> Assertions.assertEquals(chars[0], str.charAt(0)),
                 () -> Assertions.assertEquals(chars[1], str.charAt(1)),
-                () -> Assertions.assertEquals(chars[2], str.charAt(2))
+                () -> Assertions.assertEquals(chars[2], str.charAt(2)),
+                () -> Assertions.assertEquals(chars[3], str.charAt(3))
         );
     }
 
@@ -36,7 +37,7 @@ class ArrayStringTests {
 
     @Test
     void storeTheSameCharacters() {
-        char[] chars = {'s', 'e', 'a'};
+        char[] chars = {'s', 't', 'a', 'r'};
 
         java.lang.String javaStr = new java.lang.String(chars);
         String str = new ArrayString(chars);
@@ -45,13 +46,14 @@ class ArrayStringTests {
                 () -> Assertions.assertEquals(javaStr.length(), str.length()),
                 () -> Assertions.assertEquals(javaStr.charAt(0), str.charAt(0)),
                 () -> Assertions.assertEquals(javaStr.charAt(1), str.charAt(1)),
-                () -> Assertions.assertEquals(javaStr.charAt(2), str.charAt(2))
+                () -> Assertions.assertEquals(javaStr.charAt(2), str.charAt(2)),
+                () -> Assertions.assertEquals(javaStr.charAt(3), str.charAt(3))
         );
     }
 
     @Test
     void acceptAString() {
-        char[] chars = {'p', 'l', 'a', 'n', 't'};
+        char[] chars = {'c', 'l', 'o', 'u', 'd'};
         String str = new ArrayString(chars);
 
         Assertions.assertDoesNotThrow(() -> new ArrayString(str));
@@ -75,7 +77,7 @@ class ArrayStringTests {
 
     @Test
     void getEqualStringsFromCharactersAndStrings() {
-        char[] chars = {'f', 'i', 's', 'h'};
+        char[] chars = {'s', 'k', 'y'};
         String str = new ArrayString(chars);
 
         String str1 = new ArrayString(chars);
@@ -85,20 +87,19 @@ class ArrayStringTests {
                 () -> Assertions.assertEquals(str1.length(), str2.length()),
                 () -> Assertions.assertEquals(str1.charAt(0), str2.charAt(0)),
                 () -> Assertions.assertEquals(str1.charAt(1), str2.charAt(1)),
-                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2)),
-                () -> Assertions.assertEquals(str1.charAt(3), str2.charAt(3))
+                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2))
         );
     }
 
     @Test
     void acceptAJavaString() {
-        java.lang.String javaStr = "lake";
+        java.lang.String javaStr = "river";
         Assertions.assertDoesNotThrow(() -> new ArrayString(javaStr));
     }
 
     @Test
     void storeTheFullJavaString() {
-        java.lang.String javaStr = "moon";
+        java.lang.String javaStr = "lake";
         String str = new ArrayString(javaStr);
 
         Assertions.assertAll(
@@ -130,7 +131,7 @@ class ArrayStringTests {
 
     @Test
     void getEqualStringsFromStringsAndJavaStrings() {
-        char[] chars = {'s', 't', 'a', 'r'};
+        char[] chars = {'s', 'e', 'a'};
 
         String str = new ArrayString(chars);
         java.lang.String javaStr = new java.lang.String(chars);
@@ -142,14 +143,13 @@ class ArrayStringTests {
                 () -> Assertions.assertEquals(str1.length(), str2.length()),
                 () -> Assertions.assertEquals(str1.charAt(0), str2.charAt(0)),
                 () -> Assertions.assertEquals(str1.charAt(1), str2.charAt(1)),
-                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2)),
-                () -> Assertions.assertEquals(str1.charAt(3), str2.charAt(3))
+                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2))
         );
     }
 
     @Test
     void doNotGetACharacterWithANegativeIndex() {
-        String str = new ArrayString("tree");
+        String str = new ArrayString("valley");
 
         int index = -1;
 
@@ -167,7 +167,7 @@ class ArrayStringTests {
 
     @Test
     void getEachCharacter() {
-        char[] chars = {'l', 'a', 'n', 'd'};
+        char[] chars = {'h', 'i', 'l', 'l'};
         String str = new ArrayString(chars);
 
         Assertions.assertAll(
@@ -180,7 +180,7 @@ class ArrayStringTests {
 
     @Test
     void getTheSameCharacters() {
-        char[] chars = {'r', 'i', 'v', 'e', 'r'};
+        char[] chars = {'p', 'l', 'a', 'i', 'n'};
 
         java.lang.String javaStr = new java.lang.String(chars);
         String str = new ArrayString(chars);
@@ -204,7 +204,7 @@ class ArrayStringTests {
 
     @Test
     void getTheLengthOfAFourCharacterString() {
-        char[] chars = {'h', 'i', 'l', 'l'};
+        char[] chars = {'p', 'l', 'a', 'n', 't'};
         String str = new ArrayString(chars);
 
         Assertions.assertEquals(chars.length, str.length());
