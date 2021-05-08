@@ -11,17 +11,6 @@ class ArrayStringTests {
     }
 
     @Test
-    void storeAnIndependentCopyOfTheCharacters() {
-        char[] chars = {'s', 'u', 'n'};
-        String str = new ArrayString(chars);
-
-        int index = 1;
-        chars[index] = 'o';
-
-        Assertions.assertNotEquals(chars[index], str.charAt(index));
-    }
-
-    @Test
     void storeAllCharacters() {
         char[] chars = {'s', 'k', 'y'};
         String str = new ArrayString(chars);
@@ -32,6 +21,17 @@ class ArrayStringTests {
                 () -> Assertions.assertEquals(chars[1], str.charAt(1)),
                 () -> Assertions.assertEquals(chars[2], str.charAt(2))
         );
+    }
+
+    @Test
+    void storeAnIndependentCopyOfTheCharacters() {
+        char[] chars = {'s', 'u', 'n'};
+        String str = new ArrayString(chars);
+
+        int index = 1;
+        chars[index] = 'o';
+
+        Assertions.assertNotEquals(chars[index], str.charAt(index));
     }
 
     @Test
@@ -55,8 +55,26 @@ class ArrayStringTests {
     }
 
     @Test
+    void getEqualStrings() {
+        char[] chars = {'o', 'c', 'e', 'a', 'n'};
+        java.lang.String javaStr = new java.lang.String(chars);
+
+        String str1 = new ArrayString(chars);
+        String str2 = new ArrayString(javaStr);
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(str1.length(), str2.length()),
+                () -> Assertions.assertEquals(str1.charAt(0), str2.charAt(0)),
+                () -> Assertions.assertEquals(str1.charAt(1), str2.charAt(1)),
+                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2)),
+                () -> Assertions.assertEquals(str1.charAt(3), str2.charAt(3)),
+                () -> Assertions.assertEquals(str1.charAt(4), str2.charAt(4))
+        );
+    }
+
+    @Test
     void doNotGetACharacterWithANegativeIndex() {
-        char[] chars = {'l', 'a', 'k', 'e'};
+        char[] chars = {'t', 'r', 'e', 'e'};
         String str = new ArrayString(chars);
 
         int index = -1;
@@ -66,7 +84,7 @@ class ArrayStringTests {
 
     @Test
     void doNotGetACharacterBeyondTheStringLength() {
-        char[] chars = {'m', 'o', 'u', 'n', 't', 'a', 'i', 'm'};
+        char[] chars = {'m', 'o', 'u', 'n', 't', 'a', 'i', 'n'};
         String str = new ArrayString(chars);
 
         int index = chars.length;
