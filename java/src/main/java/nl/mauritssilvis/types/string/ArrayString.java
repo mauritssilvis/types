@@ -7,6 +7,14 @@ public class ArrayString implements String {
         this.chars = chars.clone();
     }
 
+    public ArrayString(java.lang.String str) {
+        chars = new char[str.length()];
+
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] = str.charAt(i);
+        }
+    }
+
     @Override
     public char charAt(int index) {
         return chars[index];

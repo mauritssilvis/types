@@ -35,6 +35,26 @@ class ArrayStringTests {
     }
 
     @Test
+    void acceptAJavaString() {
+        java.lang.String str = "field";
+        Assertions.assertDoesNotThrow(() -> new ArrayString(str));
+    }
+
+    @Test
+    void storeTheFullJavaString() {
+        java.lang.String str = "moon";
+        String word = new ArrayString(str);
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(str.length(), word.length()),
+                () -> Assertions.assertEquals(str.charAt(0), word.charAt(0)),
+                () -> Assertions.assertEquals(str.charAt(1), word.charAt(1)),
+                () -> Assertions.assertEquals(str.charAt(2), word.charAt(2)),
+                () -> Assertions.assertEquals(str.charAt(3), word.charAt(3))
+        );
+    }
+
+    @Test
     void doNotGetACharacterWithANegativeIndex() {
         char[] chars = {};
         String word = new ArrayString(chars);
