@@ -5,14 +5,33 @@ import org.junit.jupiter.api.Test;
 
 class ArrayStringTests {
     @Test
-    void storeAnIndependentCopyOfTheInputData() {
-        char[] chars = {'b', 'o', 'a', 't'};
+    void acceptACharArray() {
+        char[] chars = {'e', 'a', 'r', 't', 'h'};
+        Assertions.assertDoesNotThrow(() -> new ArrayString(chars));
+    }
+
+    @Test
+    void storeAnIndependentCopyOfTheInputCharArray() {
+        char[] chars = {'s', 'u', 'n'};
         String word = new ArrayString(chars);
 
-        int index = 2;
+        int index = 1;
         chars[index] = 'o';
-        
+
         Assertions.assertNotEquals(chars[index], word.charAt(index));
+    }
+
+    @Test
+    void storeAllCharacters() {
+        char[] chars = {'s', 'k', 'y'};
+        String word = new ArrayString(chars);
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(chars.length, word.length()),
+                () -> Assertions.assertEquals(chars[0], word.charAt(0)),
+                () -> Assertions.assertEquals(chars[1], word.charAt(1)),
+                () -> Assertions.assertEquals(chars[2], word.charAt(2))
+        );
     }
 
     @Test
