@@ -195,6 +195,61 @@ class ArrayStringTests {
     }
 
     @Test
+    void isNotEqualToNull() {
+        String str1 = new ArrayString("coast");
+
+        Assertions.assertFalse(str1.equals(null));
+    }
+
+    @Test
+    void isNotEqualToAJavaString() {
+        String str = new ArrayString("coast");
+        java.lang.String javaStr = "coast";
+
+        Assertions.assertFalse(str.equals(javaStr));
+    }
+
+    @Test
+    void isNotEqualToAnEmptyString() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void isNotEqualToADifferentlySizedString() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("co");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void isNotEqualToADifferentStringOfTheSameSize() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("beach");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void equalsTheSameString() {
+        String str1 = new ArrayString("coast");
+        String str2 = str1;
+
+        Assertions.assertTrue(str1.equals(str2));
+    }
+
+    @Test
+    void equalsAStringWithTheSameContents() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("coast");
+
+        Assertions.assertTrue(str1.equals(str2));
+    }
+
+    @Test
     void getTheLengthOfAZeroCharacterString() {
         char[] chars = {};
         String str = new ArrayString(chars);

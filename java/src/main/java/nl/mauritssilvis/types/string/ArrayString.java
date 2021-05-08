@@ -29,6 +29,29 @@ public class ArrayString implements String {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj instanceof String str) {
+            if (length() != str.length()) {
+                return false;
+            }
+
+            for (int i = 0; i < length(); i++) {
+                if (charAt(i) != str.charAt(i)) {
+                    return false;
+                }
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public int length() {
         return chars.length;
     }
