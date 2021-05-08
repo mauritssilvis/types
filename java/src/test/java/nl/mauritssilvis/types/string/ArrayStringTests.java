@@ -196,9 +196,9 @@ class ArrayStringTests {
 
     @Test
     void isNotEqualToNull() {
-        String str1 = new ArrayString("coast");
+        String str = new ArrayString("coast");
 
-        Assertions.assertFalse(str1.equals(null));
+        Assertions.assertFalse(str.equals(null));
     }
 
     @Test
@@ -218,7 +218,23 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNotEqualToADifferentlySizedString() {
+    void isNotEqualToItsFirstCharacter() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("c");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void isNotEqualToItsLastCharacter() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("t");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void isNotEqualToItsBeginning() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("co");
 
@@ -226,7 +242,23 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNotEqualToADifferentStringOfTheSameSizeWithDifferentCharacters() {
+    void isNotEqualToItsEnding() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("oast");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void isNotEqualToADifferentlySizedString() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("sand");
+
+        Assertions.assertFalse(str1.equals(str2));
+    }
+
+    @Test
+    void isNotEqualToAStringOfTheSameSize() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("beach");
 
@@ -234,7 +266,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNotEqualToADifferentStringOfTheSameSizeWithSimilarCharacters() {
+    void isNotEqualToAStringWithSimilarCharacters() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("comet");
 
@@ -242,7 +274,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNotEqualToADifferentStringOfTheSameSizeWithTheSameCharacters() {
+    void isNotEqualToAnAnagram() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("costa");
 
