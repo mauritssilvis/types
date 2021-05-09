@@ -8,5 +8,7 @@ package nl.mauritssilvis.types.string;
 public interface String {
     char charAt(int index);
 
+    boolean isEmpty();
+
     int length();
 }

@@ -400,6 +400,38 @@ class ArrayStringTests {
     }
 
     @Test
+    void isEmptyForAnEmptyCharacterArray() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertTrue(str.isEmpty());
+    }
+
+    @Test
+    void isEmptyForAnEmptyJavaString() {
+        java.lang.String javaStr = "";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertTrue(str.isEmpty());
+    }
+
+    @Test
+    void isNonEmptyForANonEmptyCharacterArray() {
+        char[] chars = {'l', 'a', 'k', 'e'};
+        String str = new ArrayString(chars);
+
+        Assertions.assertFalse(str.isEmpty());
+    }
+
+    @Test
+    void isNonEmptyForANonEmptyJavaString() {
+        java.lang.String javaStr = "ocean";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertFalse(str.isEmpty());
+    }
+
+    @Test
     void getTheLengthOfAZeroCharacterString() {
         char[] chars = {};
         String str = new ArrayString(chars);

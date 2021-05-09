@@ -69,6 +69,11 @@ public class ArrayString implements String {
     }
 
     @Override
+    public boolean isEmpty() {
+        return length() == 0;
+    }
+
+    @Override
     public java.lang.String toString() {
         return new java.lang.String(chars);
     }
