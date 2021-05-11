@@ -8,15 +8,15 @@ With this project, I provide implementations of commonly used data types and str
 
 ## Aims
 
-My general aims are to
-
-* gain experience with different programming languages; and
-* get to know the specifics of these languages.
-  
-With this repository, I particularly strive to
+My aims with this project are to
 
 * build up knowledge of data types and structures; and
 * learn how these types and structures can be implemented.
+
+More generally, I strive to
+
+* gain experience with different programming languages; and
+* get to know the specifics of these languages.
   
 Finally, I aim to
 
@@ -26,7 +26,7 @@ Finally, I aim to
 
 Currently, implementations of different data types and structures are available in
 
-* [Java](java/).
+* [Java](java).
 
 ## License
 
