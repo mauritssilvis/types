@@ -73,13 +73,7 @@ class ArrayStringTests {
         String str1 = new ArrayString(chars);
         String str2 = new ArrayString(str1);
 
-        Assertions.assertAll(
-                () -> Assertions.assertEquals(str1.length(), str2.length()),
-                () -> Assertions.assertEquals(str1.charAt(0), str2.charAt(0)),
-                () -> Assertions.assertEquals(str1.charAt(1), str2.charAt(1)),
-                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2)),
-                () -> Assertions.assertEquals(str1.charAt(3), str2.charAt(3))
-        );
+        Assertions.assertEquals(str1, str2);
     }
 
     @Test
@@ -90,12 +84,7 @@ class ArrayStringTests {
         String str1 = new ArrayString(chars);
         String str2 = new ArrayString(str);
 
-        Assertions.assertAll(
-                () -> Assertions.assertEquals(str1.length(), str2.length()),
-                () -> Assertions.assertEquals(str1.charAt(0), str2.charAt(0)),
-                () -> Assertions.assertEquals(str1.charAt(1), str2.charAt(1)),
-                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2))
-        );
+        Assertions.assertEquals(str1, str2);
     }
 
     @Test
@@ -126,14 +115,7 @@ class ArrayStringTests {
         String str1 = new ArrayString(chars);
         String str2 = new ArrayString(javaStr);
 
-        Assertions.assertAll(
-                () -> Assertions.assertEquals(str1.length(), str2.length()),
-                () -> Assertions.assertEquals(str1.charAt(0), str2.charAt(0)),
-                () -> Assertions.assertEquals(str1.charAt(1), str2.charAt(1)),
-                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2)),
-                () -> Assertions.assertEquals(str1.charAt(3), str2.charAt(3)),
-                () -> Assertions.assertEquals(str1.charAt(4), str2.charAt(4))
-        );
+        Assertions.assertEquals(str1, str2);
     }
 
     @Test
@@ -146,12 +128,7 @@ class ArrayStringTests {
         String str1 = new ArrayString(str);
         String str2 = new ArrayString(javaStr);
 
-        Assertions.assertAll(
-                () -> Assertions.assertEquals(str1.length(), str2.length()),
-                () -> Assertions.assertEquals(str1.charAt(0), str2.charAt(0)),
-                () -> Assertions.assertEquals(str1.charAt(1), str2.charAt(1)),
-                () -> Assertions.assertEquals(str1.charAt(2), str2.charAt(2))
-        );
+        Assertions.assertEquals(str1, str2);
     }
 
     @Test
