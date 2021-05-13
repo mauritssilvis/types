@@ -242,7 +242,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNotEqualToAStringOfTheSameSize() {
+    void isNotEqualToADifferentStringOfTheSameSize() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("beach");
 
@@ -267,6 +267,13 @@ class ArrayStringTests {
 
     @Test
     void equalsTheSameString() {
+        String str = new ArrayString("coast");
+
+        Assertions.assertTrue(str.equals(str));
+    }
+
+    @Test
+    void equalsADifferentVariablePointingToTheSameString() {
         String str1 = new ArrayString("coast");
         String str2 = str1;
 
@@ -323,7 +330,7 @@ class ArrayStringTests {
     @Test
     void hasADifferentHashCodeThanItsEnding() {
         String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("oast");
+        String str2 = new ArrayString("ast");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
@@ -337,7 +344,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanAStringOfTheSameSize() {
+    void hasADifferentHashCodeThanADifferentStringOfTheSameSize() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("beach");
 
@@ -362,6 +369,13 @@ class ArrayStringTests {
 
     @Test
     void hasTheSameHashCodeAsTheSameString() {
+        String str = new ArrayString("coast");
+
+        Assertions.assertEquals(str.hashCode(), str.hashCode());
+    }
+
+    @Test
+    void hasTheSameHashCodeAsADifferentVariablePointingToTheSameString() {
         String str1 = new ArrayString("coast");
         String str2 = str1;
 
