@@ -12,9 +12,23 @@ import java.util.Objects;
 
 class ArrayStringTests {
     @Test
-    void acceptAnArrayOfCharacters() {
+    void acceptAnEmptyArrayOfCharacters() {
+        char[] chars = {};
+        Assertions.assertDoesNotThrow(() -> new ArrayString(chars));
+    }
+
+    @Test
+    void acceptANonEmptyArrayOfCharacters() {
         char[] chars = {'e', 'a', 'r', 't', 'h'};
         Assertions.assertDoesNotThrow(() -> new ArrayString(chars));
+    }
+
+    @Test
+    void storeZeroCharacters() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(chars.length, str.length());
     }
 
     @Test
@@ -43,7 +57,17 @@ class ArrayStringTests {
     }
 
     @Test
-    void storeTheSameCharacters() {
+    void storeZeroCharactersLikeAJavaString() {
+        char[] chars = {};
+
+        java.lang.String javaStr = new java.lang.String(chars);
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(javaStr.length(), str.length());
+    }
+
+    @Test
+    void storeTheSameCharactersAsAJavaString() {
         char[] chars = {'s', 't', 'a', 'r'};
 
         java.lang.String javaStr = new java.lang.String(chars);
@@ -59,7 +83,15 @@ class ArrayStringTests {
     }
 
     @Test
-    void acceptAString() {
+    void acceptAnEmptyString() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertDoesNotThrow(() -> new ArrayString(str));
+    }
+
+    @Test
+    void acceptANonEmptyString() {
         char[] chars = {'c', 'l', 'o', 'u', 'd'};
         String str = new ArrayString(chars);
 
@@ -67,7 +99,17 @@ class ArrayStringTests {
     }
 
     @Test
-    void storeTheFullString() {
+    void storeAnEmptyString() {
+        char[] chars = {};
+
+        String str1 = new ArrayString(chars);
+        String str2 = new ArrayString(str1);
+
+        Assertions.assertEquals(str1, str2);
+    }
+
+    @Test
+    void storeANonEmptyString() {
         char[] chars = {'b', 'i', 'r', 'd'};
 
         String str1 = new ArrayString(chars);
@@ -77,7 +119,18 @@ class ArrayStringTests {
     }
 
     @Test
-    void getEqualStringsFromCharactersAndStrings() {
+    void getEqualStringsFromEmptyCharacterArraysAndStrings() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        String str1 = new ArrayString(chars);
+        String str2 = new ArrayString(str);
+
+        Assertions.assertEquals(str1, str2);
+    }
+
+    @Test
+    void getEqualStringsFromNonEmptyCharacterArraysAndStrings() {
         char[] chars = {'s', 'k', 'y'};
         String str = new ArrayString(chars);
 
@@ -88,13 +141,27 @@ class ArrayStringTests {
     }
 
     @Test
-    void acceptAJavaString() {
+    void acceptAnEmptyJavaString() {
+        java.lang.String javaStr = "";
+        Assertions.assertDoesNotThrow(() -> new ArrayString(javaStr));
+    }
+
+    @Test
+    void acceptANonEmptyJavaString() {
         java.lang.String javaStr = "river";
         Assertions.assertDoesNotThrow(() -> new ArrayString(javaStr));
     }
 
     @Test
-    void storeTheFullJavaString() {
+    void storeAnEmptyJavaString() {
+        java.lang.String javaStr = "";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertEquals(javaStr.length(), str.length());
+    }
+
+    @Test
+    void storeANonEmptyJavaString() {
         java.lang.String javaStr = "lake";
         String str = new ArrayString(javaStr);
 
@@ -108,7 +175,18 @@ class ArrayStringTests {
     }
 
     @Test
-    void getEqualStringsFromCharactersAndJavaStrings() {
+    void getEqualStringsFromEmptyCharacterArraysAndJavaStrings() {
+        char[] chars = {};
+        java.lang.String javaStr = new java.lang.String(chars);
+
+        String str1 = new ArrayString(chars);
+        String str2 = new ArrayString(javaStr);
+
+        Assertions.assertEquals(str1, str2);
+    }
+
+    @Test
+    void getEqualStringsFromNonEmptyCharacterArraysAndJavaStrings() {
         char[] chars = {'o', 'c', 'e', 'a', 'n'};
         java.lang.String javaStr = new java.lang.String(chars);
 
@@ -119,7 +197,20 @@ class ArrayStringTests {
     }
 
     @Test
-    void getEqualStringsFromStringsAndJavaStrings() {
+    void getEqualStringsFromEmptyStringsAndJavaStrings() {
+        char[] chars = {};
+
+        String str = new ArrayString(chars);
+        java.lang.String javaStr = new java.lang.String(chars);
+
+        String str1 = new ArrayString(str);
+        String str2 = new ArrayString(javaStr);
+
+        Assertions.assertEquals(str1, str2);
+    }
+
+    @Test
+    void getEqualStringsFromNonEmptyStringsAndJavaStrings() {
         char[] chars = {'s', 'e', 'a'};
 
         String str = new ArrayString(chars);
