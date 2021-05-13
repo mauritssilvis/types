@@ -64,13 +64,13 @@ public class ArrayString implements String {
     }
 
     @Override
-    public int length() {
-        return chars.length;
+    public boolean isEmpty() {
+        return chars.length == 0;
     }
 
     @Override
-    public boolean isEmpty() {
-        return chars.length == 0;
+    public int length() {
+        return chars.length;
     }
 
     @Override
