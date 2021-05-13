@@ -42,12 +42,12 @@ public class ArrayString implements String {
         }
 
         if (obj instanceof String str) {
-            if (length() != str.length()) {
+            if (chars.length != str.length()) {
                 return false;
             }
 
-            for (int i = 0; i < length(); i++) {
-                if (charAt(i) != str.charAt(i)) {
+            for (int i = 0; i < chars.length; i++) {
+                if (chars[i] != str.charAt(i)) {
                     return false;
                 }
             }
@@ -70,7 +70,7 @@ public class ArrayString implements String {
 
     @Override
     public boolean isEmpty() {
-        return length() == 0;
+        return chars.length == 0;
     }
 
     @Override
