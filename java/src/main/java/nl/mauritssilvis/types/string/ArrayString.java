@@ -74,6 +74,11 @@ public class ArrayString implements String {
     }
 
     @Override
+    public char[] toCharArray() {
+        return chars.clone();
+    }
+
+    @Override
     public java.lang.String toString() {
         return new java.lang.String(chars);
     }

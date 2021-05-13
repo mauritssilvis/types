@@ -447,6 +447,43 @@ class ArrayStringTests {
     }
 
     @Test
+    void convertFromAndToAnEmptyCharacterArray() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(0, str.toCharArray().length);
+    }
+
+    @Test
+    void convertFromAndToAFourCharacterArray() {
+        char[] charsIn = {'w', 'a', 'v', 'e'};
+        String str = new ArrayString(charsIn);
+
+        char[] charsOut = str.toCharArray();
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(charsIn.length, charsOut.length),
+                () -> Assertions.assertEquals(charsIn[0], charsOut[0]),
+                () -> Assertions.assertEquals(charsIn[1], charsOut[1]),
+                () -> Assertions.assertEquals(charsIn[2], charsOut[2]),
+                () -> Assertions.assertEquals(charsIn[3], charsOut[3])
+        );
+    }
+
+    @Test
+    void retrieveAnIndependentCopyOfTheCharacters() {
+        char[] charsIn = {'s', 'e', 'a'};
+        String str = new ArrayString(charsIn);
+
+        char[] charsOut = str.toCharArray();
+
+        int index = 2;
+        charsOut[index] = 'e';
+
+        Assertions.assertNotEquals(charsOut[index], str.charAt(index));
+    }
+
+    @Test
     void convertFromACharacterArrayToAJavaString() {
         char[] chars = {'l', 'a', 'n', 'd'};
         String str = new ArrayString(chars);

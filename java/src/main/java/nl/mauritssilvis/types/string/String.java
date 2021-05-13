@@ -11,4 +11,6 @@ public interface String {
     boolean isEmpty();
 
     int length();
+
+    char[] toCharArray();
 }
