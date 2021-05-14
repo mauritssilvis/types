@@ -10,6 +10,10 @@ import java.util.Arrays;
 public class ArrayString implements String {
     private final char[] chars;
 
+    public ArrayString() {
+        chars = new char[0];
+    }
+
     public ArrayString(char[] chars) {
         this.chars = chars.clone();
     }

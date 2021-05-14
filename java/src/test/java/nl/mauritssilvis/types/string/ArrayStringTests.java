@@ -12,6 +12,11 @@ import java.util.Objects;
 
 class ArrayStringTests {
     @Test
+    void constructAnEmptyString() {
+        Assertions.assertDoesNotThrow(() -> new ArrayString());
+    }
+
+    @Test
     void acceptAnEmptyArrayOfCharacters() {
         char[] chars = {};
         Assertions.assertDoesNotThrow(() -> new ArrayString(chars));
