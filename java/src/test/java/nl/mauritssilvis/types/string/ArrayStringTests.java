@@ -7,13 +7,14 @@ package nl.mauritssilvis.types.string;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.ThrowingSupplier;
 
 import java.util.Objects;
 
 class ArrayStringTests {
     @Test
     void constructAnEmptyString() {
-        Assertions.assertDoesNotThrow(() -> new ArrayString());
+        Assertions.assertDoesNotThrow((ThrowingSupplier<ArrayString>) ArrayString::new);
     }
 
     @Test
@@ -128,7 +129,7 @@ class ArrayStringTests {
         String str2 = new ArrayString(str1);
 
         Assertions.assertAll(
-                () -> Assertions.assertTrue(str1 != str2),
+                () -> Assertions.assertNotSame(str1, str2),
                 () -> Assertions.assertEquals(str1, str2)
         );
     }
@@ -141,7 +142,7 @@ class ArrayStringTests {
         String str2 = new ArrayString(str1);
 
         Assertions.assertAll(
-                () -> Assertions.assertTrue(str1 != str2),
+                () -> Assertions.assertNotSame(str1, str2),
                 () -> Assertions.assertEquals(str1, str2)
         );
     }
@@ -196,7 +197,7 @@ class ArrayStringTests {
         java.lang.String javaStr = "";
         String str = new ArrayString(javaStr);
 
-        Assertions.assertEquals(javaStr.length(), str.length());
+        Assertions.assertEquals(0, str.length());
     }
 
     @Test
@@ -320,14 +321,14 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNotEqualToNull() {
+    void doesNotEqualNull() {
         String str = new ArrayString("coast");
 
-        Assertions.assertFalse(str.equals(null));
+        Assertions.assertNotEquals(null, str);
     }
 
     @Test
-    void isNotEqualToAJavaString() {
+    void doesNotEqualAJavaString() {
         String str = new ArrayString("coast");
         java.lang.String javaStr = "coast";
 
@@ -335,109 +336,109 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNotEqualToAnEmptyString() {
+    void doesNotEqualAnEmptyString() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void isNotEqualToItsFirstCharacter() {
+    void doesNotEqualItsFirstCharacter() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("c");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void isNotEqualToItsLastCharacter() {
+    void doesNotEqualItsLastCharacter() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("t");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void isNotEqualToItsBeginning() {
+    void doesNotEqualItsBeginning() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("co");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void isNotEqualToItsEnding() {
+    void doesNotEqualItsEnding() {
         String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("oast");
+        String str2 = new ArrayString("ast");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void isNotEqualToADifferentlySizedString() {
+    void doesNotEqualADifferentlySizedString() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("sand");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void isNotEqualToADifferentStringOfTheSameSize() {
+    void doesNotEqualADifferentStringOfTheSameSize() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("beach");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void isNotEqualToAStringWithSimilarCharacters() {
+    void doesNotEqualAStringWithSimilarCharacters() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("comet");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void isNotEqualToAnAnagram() {
+    void doesNotEqualAnAnagram() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("costa");
 
-        Assertions.assertFalse(str1.equals(str2));
+        Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
-    void equalsTheSameString() {
+    void doesEqualTheSameString() {
         String str = new ArrayString("coast");
 
-        Assertions.assertTrue(str.equals(str));
+        Assertions.assertEquals(str, str);
     }
 
     @Test
-    void equalsADifferentVariablePointingToTheSameString() {
+    void doesEqualADifferentVariablePointingToTheSameString() {
         String str1 = new ArrayString("coast");
         String str2 = str1;
 
-        Assertions.assertTrue(str1.equals(str2));
+        Assertions.assertEquals(str1, str2);
     }
 
     @Test
-    void equalsAStringWithTheSameContents() {
+    void doesEqualAStringWithTheSameContents() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("coast");
 
-        Assertions.assertTrue(str1.equals(str2));
+        Assertions.assertEquals(str1, str2);
     }
 
     @Test
-    void hasADifferentHashCodeThanNull() {
+    void doesHaveADifferentHashCodeThanNull() {
         String str = new ArrayString("coast");
 
-        Assertions.assertNotEquals(str.hashCode(), Objects.hashCode(null));
+        Assertions.assertNotEquals(Objects.hashCode(null), str.hashCode());
     }
 
     @Test
-    void hasADifferentHashCodeThanAnEmptyString() {
+    void doesHaveADifferentHashCodeThanAnEmptyString() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("");
 
@@ -445,7 +446,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanItsFirstCharacter() {
+    void doesHaveADifferentHashCodeThanItsFirstCharacter() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("c");
 
@@ -453,7 +454,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanItsLastCharacter() {
+    void doesHaveADifferentHashCodeThanItsLastCharacter() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("t");
 
@@ -461,7 +462,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanItsBeginning() {
+    void doesHaveADifferentHashCodeThanItsBeginning() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("co");
 
@@ -469,7 +470,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanItsEnding() {
+    void doesHaveADifferentHashCodeThanItsEnding() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("ast");
 
@@ -477,7 +478,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanADifferentlySizedString() {
+    void doesHaveADifferentHashCodeThanADifferentlySizedString() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("sand");
 
@@ -485,7 +486,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanADifferentStringOfTheSameSize() {
+    void doesHaveADifferentHashCodeThanADifferentStringOfTheSameSize() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("beach");
 
@@ -493,7 +494,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanAStringWithSimilarCharacters() {
+    void doesHaveADifferentHashCodeThanAStringWithSimilarCharacters() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("comet");
 
@@ -501,7 +502,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void hasADifferentHashCodeThanAnAnagram() {
+    void doesHaveADifferentHashCodeThanAnAnagram() {
         String str1 = new ArrayString("coast");
         String str2 = new ArrayString("costa");
 
@@ -532,14 +533,14 @@ class ArrayStringTests {
     }
 
     @Test
-    void isEmptyForAnEmptyString() {
+    void evaluatesAsEmptyForAnEmptyString() {
         String str = new ArrayString();
 
         Assertions.assertTrue(str.isEmpty());
     }
 
     @Test
-    void isEmptyForAnEmptyCharacterArray() {
+    void evaluatesAsEmptyForAnEmptyCharacterArray() {
         char[] chars = {};
         String str = new ArrayString(chars);
 
@@ -547,7 +548,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNonEmptyForANonEmptyCharacterArray() {
+    void evaluatesAsNonEmptyForANonEmptyCharacterArray() {
         char[] chars = {'l', 'a', 'k', 'e'};
         String str = new ArrayString(chars);
 
@@ -555,7 +556,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void isEmptyForAnEmptyJavaString() {
+    void evaluatesAsEmptyForAnEmptyJavaString() {
         java.lang.String javaStr = "";
         String str = new ArrayString(javaStr);
 
@@ -563,7 +564,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void isNonEmptyForANonEmptyJavaString() {
+    void evaluatesAsNonEmptyForANonEmptyJavaString() {
         java.lang.String javaStr = "ocean";
         String str = new ArrayString(javaStr);
 
