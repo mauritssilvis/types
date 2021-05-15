@@ -304,7 +304,7 @@ class ArrayStringTests {
     }
 
     @Test
-    void getTheSameCharacters() {
+    void getTheSameCharactersAsFromAJavaString() {
         char[] chars = {'p', 'l', 'a', 'i', 'n'};
 
         java.lang.String javaStr = new java.lang.String(chars);
@@ -532,17 +532,16 @@ class ArrayStringTests {
     }
 
     @Test
-    void isEmptyForAnEmptyCharacterArray() {
-        char[] chars = {};
-        String str = new ArrayString(chars);
+    void isEmptyForAnEmptyString() {
+        String str = new ArrayString();
 
         Assertions.assertTrue(str.isEmpty());
     }
 
     @Test
-    void isEmptyForAnEmptyJavaString() {
-        java.lang.String javaStr = "";
-        String str = new ArrayString(javaStr);
+    void isEmptyForAnEmptyCharacterArray() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
 
         Assertions.assertTrue(str.isEmpty());
     }
@@ -553,6 +552,14 @@ class ArrayStringTests {
         String str = new ArrayString(chars);
 
         Assertions.assertFalse(str.isEmpty());
+    }
+
+    @Test
+    void isEmptyForAnEmptyJavaString() {
+        java.lang.String javaStr = "";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertTrue(str.isEmpty());
     }
 
     @Test
