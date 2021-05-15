@@ -17,6 +17,13 @@ class ArrayStringTests {
     }
 
     @Test
+    void createAnEmptyString() {
+        String str = new ArrayString();
+
+        Assertions.assertEquals(0, str.length());
+    }
+
+    @Test
     void acceptAnEmptyArrayOfCharacters() {
         char[] chars = {};
         Assertions.assertDoesNotThrow(() -> new ArrayString(chars));
@@ -59,6 +66,16 @@ class ArrayStringTests {
         chars[index] = 'o';
 
         Assertions.assertNotEquals(chars[index], str.charAt(index));
+    }
+
+    @Test
+    void storeZeroCharactersLikeAnEmptyString() {
+        char[] chars = {};
+
+        String str1 = new ArrayString(chars);
+        String str2 = new ArrayString();
+
+        Assertions.assertEquals(str1, str2);
     }
 
     @Test
@@ -110,7 +127,10 @@ class ArrayStringTests {
         String str1 = new ArrayString(chars);
         String str2 = new ArrayString(str1);
 
-        Assertions.assertEquals(str1, str2);
+        Assertions.assertAll(
+                () -> Assertions.assertTrue(str1 != str2),
+                () -> Assertions.assertEquals(str1, str2)
+        );
     }
 
     @Test
@@ -119,6 +139,20 @@ class ArrayStringTests {
 
         String str1 = new ArrayString(chars);
         String str2 = new ArrayString(str1);
+
+        Assertions.assertAll(
+                () -> Assertions.assertTrue(str1 != str2),
+                () -> Assertions.assertEquals(str1, str2)
+        );
+    }
+
+    @Test
+    void storeAnEmptyStringLikeAnEmptyString() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        String str1 = new ArrayString(str);
+        String str2 = new ArrayString();
 
         Assertions.assertEquals(str1, str2);
     }
@@ -177,6 +211,17 @@ class ArrayStringTests {
                 () -> Assertions.assertEquals(javaStr.charAt(2), str.charAt(2)),
                 () -> Assertions.assertEquals(javaStr.charAt(3), str.charAt(3))
         );
+    }
+
+    @Test
+    void storeAnEmptyJavaStringLikeAnEmptyString() {
+        char[] chars = {};
+        java.lang.String javaStr = new java.lang.String(chars);
+
+        String str1 = new ArrayString(javaStr);
+        String str2 = new ArrayString();
+
+        Assertions.assertEquals(str1, str2);
     }
 
     @Test
