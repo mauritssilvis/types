@@ -45,21 +45,21 @@ public class ArrayString implements String {
             return true;
         }
 
-        if (obj instanceof String str) {
-            if (chars.length != str.length()) {
-                return false;
-            }
-
-            for (int i = 0; i < chars.length; i++) {
-                if (chars[i] != str.charAt(i)) {
-                    return false;
-                }
-            }
-
-            return true;
-        } else {
+        if (!(obj instanceof String str)) {
             return false;
         }
+
+        if (chars.length != str.length()) {
+            return false;
+        }
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] != str.charAt(i)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
