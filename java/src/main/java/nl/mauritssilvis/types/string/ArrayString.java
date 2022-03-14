@@ -40,6 +40,7 @@ public class ArrayString implements String {
     }
 
     @Override
+    // TODO: Test the requirements on equals() from https://hyperskill.org/learn/step/3586
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -63,6 +64,7 @@ public class ArrayString implements String {
     }
 
     @Override
+    // TODO: Test the requirements on hashCode() from https://hyperskill.org/learn/step/3586
     public int hashCode() {
         return Arrays.hashCode(chars);
     }
