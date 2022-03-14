@@ -10,7 +10,7 @@ With this part of the [Types](https://github.com/mauritssilvis/types) project, I
 
 Currently, (partial) Java implementations of the following data types and structures are available:
 
-* [String](src/main/java/nl/mauritssilvis/types/string).
+- [String](src/main/java/nl/mauritssilvis/types/string).
 
 ## License
 
