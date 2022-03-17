@@ -31,6 +31,8 @@ Finally, I aim to:
 Currently, implementations of commonly used data types and structures are available in:
 
 - [Java](java)
+  
+TODO: Provide a type x language matrix of the data type and structure implementations.
 
 ## 3. Background
 

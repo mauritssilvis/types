@@ -2,7 +2,7 @@
 
 > A collection of data types and structures, implemented in Java
 
-## About
+## Introduction
 
 With this part of the [Types](https://github.com/mauritssilvis/types) project, I provide implementations of commonly used data types and structures in Java.
 

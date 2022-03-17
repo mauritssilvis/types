@@ -8,15 +8,13 @@ With this part of the [Types > Java](..) project, I provide implementations of t
 
 TODO: List the available numbered sections.
 
-## 1. Background
+TODO: Refer to information about the string data type.
 
-TODO: Refer to information about Java and the string data type.
-
-## 2. Implementations
+## 1. Implementations
 
 TODO: Briefly introduce the different implementations.
 
-### 2.1 An array of characters
+### 1.1 An array of characters
 
 TODO
 
