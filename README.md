@@ -2,11 +2,15 @@
 
 > A collection of data types and structures, implemented in different programming languages
 
-## About
+## Introduction
 
 With this project, I provide implementations of commonly used data types and structures in different programming languages.
 
-## Aims
+Below, I first describe the [aims](#1-aims) I have with the current project.
+I then provide an [overview](#2-overview) of the data type and structure implementations that are currently available.
+Finally, I provide some [background information](#3-background) on the data types and structures focussed on in this project.
+
+## 1. Aims
 
 My aims with this project are to:
 
@@ -22,11 +26,21 @@ Finally, I aim to:
 
 - Showcase this experience and knowledge.
 
-## Status
+## 2. Overview
 
 Currently, implementations of commonly used data types and structures are available in:
 
 - [Java](java)
+
+## 3. Background
+
+In this project, I currently focus on the following data types and structures:
+
+- [String](#31-string)
+
+### 3.1 String
+
+TODO: Introduce the string data type.
 
 ## License
 
