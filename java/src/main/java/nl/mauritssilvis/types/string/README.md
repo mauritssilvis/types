@@ -4,7 +4,7 @@
 
 ## Introduction
 
-With this part of the [Types > Java](..) project, I provide implementations of the string data type in Java.
+With this part of the [Types > Java](../../../../../../..) project, I provide implementations of the string data type in Java.
 
 TODO: List the available numbered sections.
 
