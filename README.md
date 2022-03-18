@@ -8,7 +8,7 @@ With this project, I provide implementations of commonly used data types and str
 
 Below, I first describe the [aims](#1-aims) I have with the current project.
 I then provide an [overview](#2-overview) of the data type and structure implementations that are currently available.
-Finally, I provide some [background information](#3-background) on the data types and structures focussed on in this project.
+Finally, I provide some [background information](#3-background) on the data types and structures I focus on in this project.
 
 ## 1. Aims
 
@@ -36,9 +36,7 @@ TODO: Provide a type x language matrix of the data type and structure implementa
 
 ## 3. Background
 
-In this project, I currently focus on the following data types and structures:
-
-- [String](#31-string)
+More information on the data types and structures that I focus on in this project is given in what follows.
 
 ### 3.1 String
 
