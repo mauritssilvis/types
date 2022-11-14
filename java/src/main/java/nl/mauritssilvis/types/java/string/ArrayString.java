@@ -40,6 +40,26 @@ public class ArrayString implements String {
     }
 
     @Override
+    public boolean isEmpty() {
+        return chars.length == 0;
+    }
+
+    @Override
+    public int length() {
+        return chars.length;
+    }
+
+    @Override
+    public char[] toCharArray() {
+        return chars.clone();
+    }
+
+    @Override
+    // TODO: Test the requirements on hashCode() from https://hyperskill.org/learn/step/3586
+    public int hashCode() {
+        return Arrays.hashCode(chars);
+    }
+    @Override
     // TODO: Test the requirements on equals() from https://hyperskill.org/learn/step/3586
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -61,27 +81,6 @@ public class ArrayString implements String {
         }
 
         return true;
-    }
-
-    @Override
-    // TODO: Test the requirements on hashCode() from https://hyperskill.org/learn/step/3586
-    public int hashCode() {
-        return Arrays.hashCode(chars);
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return chars.length == 0;
-    }
-
-    @Override
-    public int length() {
-        return chars.length;
-    }
-
-    @Override
-    public char[] toCharArray() {
-        return chars.clone();
     }
 
     @Override
