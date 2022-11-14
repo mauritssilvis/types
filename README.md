@@ -44,7 +44,17 @@ More information on the data types and structures that I focus on in this projec
 
 ### 3.1 String
 
-TODO: Introduce the string data type.
+Next to numeric data types like integers and floating point numbers, strings arguably are one of the most used data types in programming.
+Essentially, strings are arrays of characters.
+Yet, despite this seeming simplicity, strings can be used to store everything from single words to names, email addresses, codes like passwords and even full texts. 
+
+In many programming languages, including Java, strings are represented by immutable objects.
+Immutable objects are objects that can't be changed once they are created.
+Concatenation of two immutable strings will, therefore, not result in modification of either of the strings, but in the creation of a new (a third) string.
+As such, immutability could be seen as a disadvantage.
+However, consider using strings as keys for a hash map.
+If strings were mutable, you could change those keys by changing the used strings.
+The immutability of strings prevents such changes and, thereby, prevents unexpected situations and potential bugs.
 
 ## License
 
