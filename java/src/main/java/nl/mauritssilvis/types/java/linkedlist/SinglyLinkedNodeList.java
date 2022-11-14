@@ -13,14 +13,15 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
 
     @Override
     public void add(T element) {
+        ForwardNode<T> newNode = new SinglyLinkedNode<>(element);
+
         if (size == 0) {
-            head = new SinglyLinkedNode<>(element);
-            size = 1;
-            return;
+            head = newNode;
+        } else {
+            ForwardNode<T> lastNode = getNode(size - 1);
+            lastNode.setNext(newNode);
         }
 
-        ForwardNode<T> lastNode = getNode(size - 1);
-        lastNode.setNext(new SinglyLinkedNode<>(element));
         size++;
     }
 
