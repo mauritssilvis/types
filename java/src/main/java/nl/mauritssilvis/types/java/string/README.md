@@ -12,7 +12,7 @@ General information about the string data type can be found in the [string secti
 
 ## 1. Implementations
 
-In what follows, I focus on immutable string types that implement the interface from the file [String.java](String.java):
+I focus on immutable string types that implement the interface from the file [String.java](String.java):
 
 ```java
 package nl.mauritssilvis.types.java.string;
@@ -28,7 +28,7 @@ public interface String {
 }
 ```
 
-Objects of the above type allow for random access of the characters they contain, know about their length and can be converted to character arrays.
+Objects of this type allow for random access of the characters they contain, know about their length and can be converted to character arrays.
 
 ### 1.1 An array of characters
 
