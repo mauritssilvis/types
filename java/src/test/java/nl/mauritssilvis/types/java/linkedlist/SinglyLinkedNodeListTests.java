@@ -14,6 +14,7 @@ class SinglyLinkedNodeListTests {
         LinkedList<Integer> list = new SinglyLinkedNodeList<>();
 
         int element = 1;
+
         Assertions.assertDoesNotThrow(() -> list.add(element));
     }
 
@@ -115,6 +116,103 @@ class SinglyLinkedNodeListTests {
 
         int index = 3;
         int element = 2;
+
+        Assertions.assertEquals(element, list.get(index));
+    }
+
+    @Test
+    void doNotSetAnElementWithANegativeIndex() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        int index = -1;
+        int element = 3;
+
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> list.set(index, element));
+    }
+
+    @Test
+    void doNotSetANonExistingFirstElement() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        int index = 0;
+        int element = 4;
+
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> list.set(index, element));
+    }
+
+    @Test
+    void doNotSetANonExistingElement() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        list.add(4);
+        list.add(-2);
+
+        int index = 3;
+        int element = 9;
+
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> list.set(index, element));
+    }
+
+    @Test
+    void setOneElement() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        list.add(2);
+
+        int index = 0;
+        int element = 3;
+
+        list.set(index, element);
+
+        Assertions.assertEquals(element, list.get(index));
+    }
+
+    @Test
+    void setTheFirstElement() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        list.add(0);
+        list.add(2);
+        list.add(3);
+
+        int index = 0;
+        int element = 1;
+
+        list.set(index, element);
+
+        Assertions.assertEquals(element, list.get(index));
+    }
+
+    @Test
+    void setTheLastElement() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        list.add(2);
+        list.add(6);
+        list.add(4);
+        list.add(8);
+
+        int index = 3;
+        int element = 5;
+
+        list.set(index, element);
+
+        Assertions.assertEquals(element, list.get(index));
+    }
+
+    @Test
+    void setAnElement() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        list.add(5);
+        list.add(4);
+        list.add(8);
+        list.add(2);
+
+        int index = 2;
+        int element = 2;
+
+        list.set(index, element);
 
         Assertions.assertEquals(element, list.get(index));
     }

@@ -9,4 +9,6 @@ public interface LinkedList<T> {
     void add(T element);
 
     T get(int index);
+
+    default void set(int index, T element) {}
 }
