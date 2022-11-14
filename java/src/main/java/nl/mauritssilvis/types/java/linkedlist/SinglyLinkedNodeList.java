@@ -26,7 +26,7 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
 
     @Override
     public T get(int index) {
-        if (index >= size) {
+        if (index < 0 || index >= size) {
             String msg = "Index %d out of bounds for singly linked list of size %d.".formatted(index, size);
             throw new IndexOutOfBoundsException(msg);
         }

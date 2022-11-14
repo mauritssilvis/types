@@ -31,6 +31,15 @@ class SinglyLinkedNodeListTests {
     }
 
     @Test
+    void doNotGetAnElementWithANegativeIndex() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        int index = -1;
+
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> list.get(index));
+    }
+
+    @Test
     void doNotGetANonExistingFirstElement() {
         LinkedList<Integer> list = new SinglyLinkedNodeList<>();
 
