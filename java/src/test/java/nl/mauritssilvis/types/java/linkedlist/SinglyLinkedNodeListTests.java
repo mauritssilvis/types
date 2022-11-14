@@ -31,6 +31,28 @@ class SinglyLinkedNodeListTests {
     }
 
     @Test
+    void doNotGetANonExistingFirstElement() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        int index = 0;
+
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> list.get(index));
+    }
+
+    @Test
+    void doNotGetANonExistingElement() {
+        LinkedList<Integer> list = new SinglyLinkedNodeList<>();
+
+        list.add(6);
+        list.add(3);
+        list.add(2);
+
+        int index = 3;
+
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> list.get(index));
+    }
+
+    @Test
     void getOneElement() {
         LinkedList<Integer> list = new SinglyLinkedNodeList<>();
 
