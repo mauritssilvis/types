@@ -1,9 +1,9 @@
 /*
- * Copyright © 2021 Maurits H. Silvis
+ * Copyright © 2021, 2022 Maurits H. Silvis
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package nl.mauritssilvis.types.string;
+package nl.mauritssilvis.types.java.string;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -321,6 +321,208 @@ class ArrayStringTests {
     }
 
     @Test
+    void evaluatesAsEmptyForAnEmptyString() {
+        String str = new ArrayString();
+
+        Assertions.assertTrue(str.isEmpty());
+    }
+
+    @Test
+    void evaluatesAsEmptyForAnEmptyCharacterArray() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertTrue(str.isEmpty());
+    }
+
+    @Test
+    void evaluatesAsNonEmptyForANonEmptyCharacterArray() {
+        char[] chars = {'l', 'a', 'k', 'e'};
+        String str = new ArrayString(chars);
+
+        Assertions.assertFalse(str.isEmpty());
+    }
+
+    @Test
+    void evaluatesAsEmptyForAnEmptyJavaString() {
+        java.lang.String javaStr = "";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertTrue(str.isEmpty());
+    }
+
+    @Test
+    void evaluatesAsNonEmptyForANonEmptyJavaString() {
+        java.lang.String javaStr = "ocean";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertFalse(str.isEmpty());
+    }
+
+    @Test
+    void getTheLengthOfAZeroCharacterString() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(chars.length, str.length());
+    }
+
+    @Test
+    void getTheLengthOfAFourCharacterString() {
+        char[] chars = {'t', 'r', 'e', 'e'};
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(chars.length, str.length());
+    }
+
+    @Test
+    void getTheSameLength() {
+        java.lang.String javaStr = "forest";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertEquals(javaStr.length(), str.length());
+    }
+
+    @Test
+    void convertFromAndToAnEmptyCharacterArray() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(0, str.toCharArray().length);
+    }
+
+    @Test
+    void convertFromAndToAFourCharacterArray() {
+        char[] charsIn = {'w', 'a', 'v', 'e'};
+        String str = new ArrayString(charsIn);
+
+        char[] charsOut = str.toCharArray();
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(charsIn.length, charsOut.length),
+                () -> Assertions.assertEquals(charsIn[0], charsOut[0]),
+                () -> Assertions.assertEquals(charsIn[1], charsOut[1]),
+                () -> Assertions.assertEquals(charsIn[2], charsOut[2]),
+                () -> Assertions.assertEquals(charsIn[3], charsOut[3])
+        );
+    }
+
+    @Test
+    void retrieveAnIndependentCopyOfTheCharacters() {
+        char[] charsIn = {'s', 'e', 'a'};
+        String str = new ArrayString(charsIn);
+
+        char[] charsOut = str.toCharArray();
+
+        int index = 2;
+        charsOut[index] = 'e';
+
+        Assertions.assertNotEquals(charsOut[index], str.charAt(index));
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanNull() {
+        String str = new ArrayString("coast");
+
+        Assertions.assertNotEquals(Objects.hashCode(null), str.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanAnEmptyString() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanItsFirstCharacter() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("c");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanItsLastCharacter() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("t");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanItsBeginning() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("co");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanItsEnding() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("ast");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanADifferentlySizedString() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("sand");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanADifferentStringOfTheSameSize() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("beach");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanAStringWithSimilarCharacters() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("comet");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void doesHaveADifferentHashCodeThanAnAnagram() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("costa");
+
+        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasTheSameHashCodeAsTheSameString() {
+        String str = new ArrayString("coast");
+
+        Assertions.assertEquals(str.hashCode(), str.hashCode());
+    }
+
+    @Test
+    void hasTheSameHashCodeAsADifferentVariablePointingToTheSameString() {
+        String str1 = new ArrayString("coast");
+        String str2 = str1;
+
+        Assertions.assertEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
+    void hasTheSameHashCodeAsAStringWithTheSameContents() {
+        String str1 = new ArrayString("coast");
+        String str2 = new ArrayString("coast");
+
+        Assertions.assertEquals(str1.hashCode(), str2.hashCode());
+    }
+
+    @Test
     void doesNotEqualNull() {
         String str = new ArrayString("coast");
 
@@ -428,208 +630,6 @@ class ArrayStringTests {
         String str2 = new ArrayString("coast");
 
         Assertions.assertEquals(str1, str2);
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanNull() {
-        String str = new ArrayString("coast");
-
-        Assertions.assertNotEquals(Objects.hashCode(null), str.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanAnEmptyString() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanItsFirstCharacter() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("c");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanItsLastCharacter() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("t");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanItsBeginning() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("co");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanItsEnding() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("ast");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanADifferentlySizedString() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("sand");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanADifferentStringOfTheSameSize() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("beach");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanAStringWithSimilarCharacters() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("comet");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void doesHaveADifferentHashCodeThanAnAnagram() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("costa");
-
-        Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void hasTheSameHashCodeAsTheSameString() {
-        String str = new ArrayString("coast");
-
-        Assertions.assertEquals(str.hashCode(), str.hashCode());
-    }
-
-    @Test
-    void hasTheSameHashCodeAsADifferentVariablePointingToTheSameString() {
-        String str1 = new ArrayString("coast");
-        String str2 = str1;
-
-        Assertions.assertEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void hasTheSameHashCodeAsAStringWithTheSameContents() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("coast");
-
-        Assertions.assertEquals(str1.hashCode(), str2.hashCode());
-    }
-
-    @Test
-    void evaluatesAsEmptyForAnEmptyString() {
-        String str = new ArrayString();
-
-        Assertions.assertTrue(str.isEmpty());
-    }
-
-    @Test
-    void evaluatesAsEmptyForAnEmptyCharacterArray() {
-        char[] chars = {};
-        String str = new ArrayString(chars);
-
-        Assertions.assertTrue(str.isEmpty());
-    }
-
-    @Test
-    void evaluatesAsNonEmptyForANonEmptyCharacterArray() {
-        char[] chars = {'l', 'a', 'k', 'e'};
-        String str = new ArrayString(chars);
-
-        Assertions.assertFalse(str.isEmpty());
-    }
-
-    @Test
-    void evaluatesAsEmptyForAnEmptyJavaString() {
-        java.lang.String javaStr = "";
-        String str = new ArrayString(javaStr);
-
-        Assertions.assertTrue(str.isEmpty());
-    }
-
-    @Test
-    void evaluatesAsNonEmptyForANonEmptyJavaString() {
-        java.lang.String javaStr = "ocean";
-        String str = new ArrayString(javaStr);
-
-        Assertions.assertFalse(str.isEmpty());
-    }
-
-    @Test
-    void getTheLengthOfAZeroCharacterString() {
-        char[] chars = {};
-        String str = new ArrayString(chars);
-
-        Assertions.assertEquals(chars.length, str.length());
-    }
-
-    @Test
-    void getTheLengthOfAFourCharacterString() {
-        char[] chars = {'t', 'r', 'e', 'e'};
-        String str = new ArrayString(chars);
-
-        Assertions.assertEquals(chars.length, str.length());
-    }
-
-    @Test
-    void getTheSameLength() {
-        java.lang.String javaStr = "forest";
-        String str = new ArrayString(javaStr);
-
-        Assertions.assertEquals(javaStr.length(), str.length());
-    }
-
-    @Test
-    void convertFromAndToAnEmptyCharacterArray() {
-        char[] chars = {};
-        String str = new ArrayString(chars);
-
-        Assertions.assertEquals(0, str.toCharArray().length);
-    }
-
-    @Test
-    void convertFromAndToAFourCharacterArray() {
-        char[] charsIn = {'w', 'a', 'v', 'e'};
-        String str = new ArrayString(charsIn);
-
-        char[] charsOut = str.toCharArray();
-
-        Assertions.assertAll(
-                () -> Assertions.assertEquals(charsIn.length, charsOut.length),
-                () -> Assertions.assertEquals(charsIn[0], charsOut[0]),
-                () -> Assertions.assertEquals(charsIn[1], charsOut[1]),
-                () -> Assertions.assertEquals(charsIn[2], charsOut[2]),
-                () -> Assertions.assertEquals(charsIn[3], charsOut[3])
-        );
-    }
-
-    @Test
-    void retrieveAnIndependentCopyOfTheCharacters() {
-        char[] charsIn = {'s', 'e', 'a'};
-        String str = new ArrayString(charsIn);
-
-        char[] charsOut = str.toCharArray();
-
-        int index = 2;
-        charsOut[index] = 'e';
-
-        Assertions.assertNotEquals(charsOut[index], str.charAt(index));
     }
 
     @Test

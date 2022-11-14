@@ -1,9 +1,9 @@
 /*
- * Copyright © 2021 Maurits H. Silvis
+ * Copyright © 2021, 2022 Maurits H. Silvis
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package nl.mauritssilvis.types.string;
+package nl.mauritssilvis.types.java.string;
 
 import java.util.Arrays;
 
@@ -40,34 +40,6 @@ public class ArrayString implements String {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-
-        if (obj instanceof String str) {
-            if (chars.length != str.length()) {
-                return false;
-            }
-
-            for (int i = 0; i < chars.length; i++) {
-                if (chars[i] != str.charAt(i)) {
-                    return false;
-                }
-            }
-
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    @Override
-    public int hashCode() {
-        return Arrays.hashCode(chars);
-    }
-
-    @Override
     public boolean isEmpty() {
         return chars.length == 0;
     }
@@ -80,6 +52,35 @@ public class ArrayString implements String {
     @Override
     public char[] toCharArray() {
         return chars.clone();
+    }
+
+    @Override
+    // TODO: Test the requirements on hashCode() from https://hyperskill.org/learn/step/3586
+    public int hashCode() {
+        return Arrays.hashCode(chars);
+    }
+    @Override
+    // TODO: Test the requirements on equals() from https://hyperskill.org/learn/step/3586
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof String str)) {
+            return false;
+        }
+
+        if (chars.length != str.length()) {
+            return false;
+        }
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] != str.charAt(i)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
