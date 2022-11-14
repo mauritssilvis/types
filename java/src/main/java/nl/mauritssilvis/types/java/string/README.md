@@ -12,7 +12,7 @@ General information about the string data type can be found in the [string secti
 
 ## 1. Implementations
 
-In what follows, I focus on string types that implement the interface from the file [String.java](String.java):
+In what follows, I focus on immutable string types that implement the interface from the file [String.java](String.java):
 
 ```java
 package nl.mauritssilvis.types.java.string;
