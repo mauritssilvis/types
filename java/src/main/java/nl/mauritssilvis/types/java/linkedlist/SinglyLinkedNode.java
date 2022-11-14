@@ -5,27 +5,27 @@
 
 package nl.mauritssilvis.types.java.linkedlist;
 
-class ForwardNode<T> {
-    T data;
-    ForwardNode<T> next;
+class SinglyLinkedNode<T> {
+    private T data;
+    private SinglyLinkedNode<T> next;
 
-    ForwardNode(T data) {
+    SinglyLinkedNode(T data) {
         this.data = data;
     }
 
     T getData() {
-        return this.data;
+        return data;
     }
 
     void setData(T data) {
         this.data = data;
     }
 
-    ForwardNode<T> getNext() {
-        return this.next;
+    SinglyLinkedNode<T> getNext() {
+        return next;
     }
 
-    void setNext(ForwardNode next) {
+    void setNext(SinglyLinkedNode<T> next) {
         this.next = next;
     }
 }

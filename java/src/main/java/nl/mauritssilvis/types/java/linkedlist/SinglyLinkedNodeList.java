@@ -7,18 +7,18 @@ package nl.mauritssilvis.types.java.linkedlist;
 
 public class SinglyLinkedNodeList<T> implements LinkedList<T> {
     private int size;
-    private ForwardNode<T> head;
+    private SinglyLinkedNode<T> head;
 
     @Override
     public void add(T element) {
         if (size == 0) {
-            head = new ForwardNode<>(element);
+            head = new SinglyLinkedNode<>(element);
             size = 1;
             return;
         }
 
-        ForwardNode<T> lastNode = getNode(size - 1);
-        lastNode.setNext(new ForwardNode<>(element));
+        SinglyLinkedNode<T> lastNode = getNode(size - 1);
+        lastNode.setNext(new SinglyLinkedNode<>(element));
         size++;
     }
 
@@ -29,12 +29,12 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
             throw new IndexOutOfBoundsException(msg);
         }
 
-        ForwardNode<T> node = getNode(index);
+        SinglyLinkedNode<T> node = getNode(index);
         return node.getData();
     }
 
-    private ForwardNode<T> getNode(int index) {
-        ForwardNode<T> node = head;
+    private SinglyLinkedNode<T> getNode(int index) {
+        SinglyLinkedNode<T> node = head;
 
         for (int i = 1; i < index; i++) {
             node = node.getNext();
