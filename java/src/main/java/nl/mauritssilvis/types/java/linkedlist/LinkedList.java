@@ -10,5 +10,5 @@ public interface LinkedList<T> {
 
     T get(int index);
 
-    default void set(int index, T element) {}
+    void set(int index, T element);
 }

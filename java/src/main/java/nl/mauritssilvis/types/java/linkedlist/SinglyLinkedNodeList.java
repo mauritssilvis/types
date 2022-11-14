@@ -26,13 +26,18 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
 
     @Override
     public T get(int index) {
-        if (index < 0 || index >= size) {
-            String msg = "Index %d out of bounds for singly linked list of size %d.".formatted(index, size);
-            throw new IndexOutOfBoundsException(msg);
-        }
+        verifyIndex(index);
 
         ForwardNode<T> node = getNode(index);
         return node.getData();
+    }
+
+    @Override
+    public void set(int index, T element) {
+        verifyIndex(index);
+
+        ForwardNode<T> node = getNode(index);
+        node.setData(element);
     }
 
     private ForwardNode<T> getNode(int index) {
@@ -43,5 +48,12 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
         }
 
         return node;
+    }
+
+    private void verifyIndex(int index) {
+        if (index < 0 || index >= size) {
+            String msg = "Index %d out of bounds for singly linked list of size %d.".formatted(index, size);
+            throw new IndexOutOfBoundsException(msg);
+        }
     }
 }
