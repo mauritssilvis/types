@@ -34,9 +34,9 @@ Currently, implementations of commonly used data types and structures are availa
 
 I specifically provide the following data type and structure implementations:
 
-| Design pattern | Java                                                       |
-|----------------|------------------------------------------------------------|
-| String         | [✅](java/src/main/java/nl/mauritssilvis/types/java/string) |
+| Data type or structure | Java                                                       |
+|------------------------|------------------------------------------------------------|
+| String                 | [✅](java/src/main/java/nl/mauritssilvis/types/java/string) |
 
 ## 3. Background
 
@@ -44,7 +44,7 @@ More information on the data types and structures that I focus on in this projec
 
 ### 3.1 String
 
-Next to numeric data types like integers and floating point numbers, strings arguably are one of the most used data types in programming.
+Next to numeric types like integers and floating point numbers, strings arguably are one of the most used data types in programming.
 Essentially, strings are arrays of characters.
 Yet, despite this seeming simplicity, strings can be used to store everything from single words to names, email addresses, codes like passwords and even full texts. 
 

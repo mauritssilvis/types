@@ -6,17 +6,51 @@
 
 With this part of the [Types > Java](../../../../../../../..) project, I provide implementations of the string data type in Java.
 
-TODO: List the available numbered sections.
+Below, I give an overview of the different [implementations](#1-implementations) I considered.
 
-TODO: Refer to information about the string data type.
+General information about the string data type can be found in the [string section](../../../../../../../../../README.md#31-string) of the general [project readme](../../../../../../../../../README.md).
 
 ## 1. Implementations
 
-TODO: Briefly introduce the different implementations.
+In what follows, I focus on string types that implement the interface from the file [String.java](String.java):
+
+```java
+package nl.mauritssilvis.types.java.string;
+
+public interface String {
+    char charAt(int index);
+
+    boolean isEmpty();
+
+    int length();
+
+    char[] toCharArray();
+}
+```
+
+Objects of the above type allow for random access of the characters they contain, know about their length and can be converted to character arrays.
 
 ### 1.1 An array of characters
 
-TODO
+One of the ways in which immutable strings can be implemented relies on the use of an array of characters. Such an implementation is provided in the file [ArrayString.java](ArrayString.java), which in a condensed form looks as follows:
+
+```java
+package nl.mauritssilvis.types.java.string;
+
+// Import statements
+
+public class ArrayString implements String {
+    private final char[] chars;
+
+    // A no-argument constructor and constructors accepting char[] or String objects
+
+    // Methods implementing the String interface 
+    
+    // Methods overriding some methods of the Object class
+}
+```
+
+Unit tests confirm the functioning of this immutable string implementation.
 
 ## License
 
