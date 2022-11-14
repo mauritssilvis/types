@@ -32,7 +32,7 @@ Objects of the above type allow for random access of the characters they contain
 
 ### 1.1 An array of characters
 
-One of the ways in which immutable strings can be implemented relies on the use of an array of characters. Such an implementation is provided in the file [ArrayString.java](ArrayString.java), which in a condensed form looks as follows:
+One of the ways in which the above immutable string interface can be implemented relies on the use of an array of characters. Such an implementation is provided in the file [ArrayString.java](ArrayString.java), which in a condensed form looks as follows:
 
 ```java
 package nl.mauritssilvis.types.java.string;
