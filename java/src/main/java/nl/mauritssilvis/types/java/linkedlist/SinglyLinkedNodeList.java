@@ -5,9 +5,11 @@
 
 package nl.mauritssilvis.types.java.linkedlist;
 
+import nl.mauritssilvis.types.java.node.ForwardNode;
+
 public class SinglyLinkedNodeList<T> implements LinkedList<T> {
     private int size;
-    private SinglyLinkedNode<T> head;
+    private ForwardNode<T> head;
 
     @Override
     public void add(T element) {
@@ -17,7 +19,7 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
             return;
         }
 
-        SinglyLinkedNode<T> lastNode = getNode(size - 1);
+        ForwardNode<T> lastNode = getNode(size - 1);
         lastNode.setNext(new SinglyLinkedNode<>(element));
         size++;
     }
@@ -29,12 +31,12 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
             throw new IndexOutOfBoundsException(msg);
         }
 
-        SinglyLinkedNode<T> node = getNode(index);
+        ForwardNode<T> node = getNode(index);
         return node.getData();
     }
 
-    private SinglyLinkedNode<T> getNode(int index) {
-        SinglyLinkedNode<T> node = head;
+    private ForwardNode<T> getNode(int index) {
+        ForwardNode<T> node = head;
 
         for (int i = 1; i < index; i++) {
             node = node.getNext();
