@@ -19,10 +19,10 @@ public class ArrayString implements String {
     }
 
     public ArrayString(String str) {
-        chars = new char[str.length()];
+        chars = new char[str.getLength()];
 
         for (int i = 0; i < chars.length; i++) {
-            chars[i] = str.charAt(i);
+            chars[i] = str.getChar(i);
         }
     }
 
@@ -35,7 +35,7 @@ public class ArrayString implements String {
     }
 
     @Override
-    public char charAt(int index) {
+    public char getChar(int index) {
         return chars[index];
     }
 
@@ -45,7 +45,7 @@ public class ArrayString implements String {
     }
 
     @Override
-    public int length() {
+    public int getLength() {
         return chars.length;
     }
 
@@ -70,12 +70,12 @@ public class ArrayString implements String {
             return false;
         }
 
-        if (chars.length != str.length()) {
+        if (chars.length != str.getLength()) {
             return false;
         }
 
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] != str.charAt(i)) {
+            if (chars[i] != str.getChar(i)) {
                 return false;
             }
         }
