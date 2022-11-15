@@ -45,7 +45,7 @@ public class SinglyLinkedNodeList<E> implements LinkedList<E> {
 
         ForwardNode<E> node = head;
 
-        for (int i = 1; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             node = node.getNext();
         }
 
