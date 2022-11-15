@@ -7,7 +7,7 @@ package nl.mauritssilvis.types.java.linkedlist;
 
 import nl.mauritssilvis.types.java.node.ForwardNode;
 
-class SinglyLinkedNode<T> implements ForwardNode<T> {
+public class SinglyLinkedNode<T> implements ForwardNode<T> {
     private T data;
     private ForwardNode<T> next;
 
