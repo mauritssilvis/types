@@ -26,7 +26,7 @@ public class ArrayString implements ImmutableString {
         }
     }
 
-    public ArrayString(java.lang.String str) {
+    public ArrayString(String str) {
         chars = new char[str.length()];
 
         for (int i = 0; i < chars.length; i++) {
@@ -84,7 +84,7 @@ public class ArrayString implements ImmutableString {
     }
 
     @Override
-    public java.lang.String toString() {
-        return new java.lang.String(chars);
+    public String toString() {
+        return new String(chars);
     }
 }

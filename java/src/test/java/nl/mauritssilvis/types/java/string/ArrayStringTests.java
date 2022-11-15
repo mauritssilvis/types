@@ -83,7 +83,7 @@ class ArrayStringTests {
     void storeZeroCharactersLikeAJavaString() {
         char[] chars = {};
 
-        java.lang.String javaStr = new java.lang.String(chars);
+        String javaStr = new String(chars);
         ImmutableString str = new ArrayString(chars);
 
         Assertions.assertEquals(javaStr.length(), str.getLength());
@@ -93,7 +93,7 @@ class ArrayStringTests {
     void storeTheSameCharactersAsAJavaString() {
         char[] chars = {'s', 't', 'a', 'r'};
 
-        java.lang.String javaStr = new java.lang.String(chars);
+        String javaStr = new String(chars);
         ImmutableString str = new ArrayString(chars);
 
         Assertions.assertAll(
@@ -182,19 +182,19 @@ class ArrayStringTests {
 
     @Test
     void acceptAnEmptyJavaString() {
-        java.lang.String javaStr = "";
+        String javaStr = "";
         Assertions.assertDoesNotThrow(() -> new ArrayString(javaStr));
     }
 
     @Test
     void acceptANonEmptyJavaString() {
-        java.lang.String javaStr = "river";
+        String javaStr = "river";
         Assertions.assertDoesNotThrow(() -> new ArrayString(javaStr));
     }
 
     @Test
     void storeAnEmptyJavaString() {
-        java.lang.String javaStr = "";
+        String javaStr = "";
         ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertEquals(0, str.getLength());
@@ -202,7 +202,7 @@ class ArrayStringTests {
 
     @Test
     void storeANonEmptyJavaString() {
-        java.lang.String javaStr = "lake";
+        String javaStr = "lake";
         ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertAll(
@@ -217,7 +217,7 @@ class ArrayStringTests {
     @Test
     void storeAnEmptyJavaStringLikeAnEmptyString() {
         char[] chars = {};
-        java.lang.String javaStr = new java.lang.String(chars);
+        String javaStr = new String(chars);
 
         ImmutableString str1 = new ArrayString(javaStr);
         ImmutableString str2 = new ArrayString();
@@ -228,7 +228,7 @@ class ArrayStringTests {
     @Test
     void getEqualStringsFromEmptyCharacterArraysAndJavaStrings() {
         char[] chars = {};
-        java.lang.String javaStr = new java.lang.String(chars);
+        String javaStr = new String(chars);
 
         ImmutableString str1 = new ArrayString(chars);
         ImmutableString str2 = new ArrayString(javaStr);
@@ -239,7 +239,7 @@ class ArrayStringTests {
     @Test
     void getEqualStringsFromNonEmptyCharacterArraysAndJavaStrings() {
         char[] chars = {'o', 'c', 'e', 'a', 'n'};
-        java.lang.String javaStr = new java.lang.String(chars);
+        String javaStr = new String(chars);
 
         ImmutableString str1 = new ArrayString(chars);
         ImmutableString str2 = new ArrayString(javaStr);
@@ -252,7 +252,7 @@ class ArrayStringTests {
         char[] chars = {};
 
         ImmutableString str = new ArrayString(chars);
-        java.lang.String javaStr = new java.lang.String(chars);
+        String javaStr = new String(chars);
 
         ImmutableString str1 = new ArrayString(str);
         ImmutableString str2 = new ArrayString(javaStr);
@@ -265,7 +265,7 @@ class ArrayStringTests {
         char[] chars = {'s', 'e', 'a'};
 
         ImmutableString str = new ArrayString(chars);
-        java.lang.String javaStr = new java.lang.String(chars);
+        String javaStr = new String(chars);
 
         ImmutableString str1 = new ArrayString(str);
         ImmutableString str2 = new ArrayString(javaStr);
@@ -291,7 +291,7 @@ class ArrayStringTests {
 
     @Test
     void getTheSameLength() {
-        java.lang.String javaStr = "forest";
+        String javaStr = "forest";
         ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertEquals(javaStr.length(), str.getLength());
@@ -322,7 +322,7 @@ class ArrayStringTests {
 
     @Test
     void evaluatesAsEmptyForAnEmptyJavaString() {
-        java.lang.String javaStr = "";
+        String javaStr = "";
         ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertTrue(str.isEmpty());
@@ -330,7 +330,7 @@ class ArrayStringTests {
 
     @Test
     void evaluatesAsNonEmptyForANonEmptyJavaString() {
-        java.lang.String javaStr = "ocean";
+        String javaStr = "ocean";
         ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertFalse(str.isEmpty());
@@ -371,7 +371,7 @@ class ArrayStringTests {
     void getTheSameCharactersAsFromAJavaString() {
         char[] chars = {'p', 'l', 'a', 'i', 'n'};
 
-        java.lang.String javaStr = new java.lang.String(chars);
+        String javaStr = new String(chars);
         ImmutableString str = new ArrayString(chars);
 
         Assertions.assertAll(
@@ -532,7 +532,7 @@ class ArrayStringTests {
     @Test
     void doesNotEqualAJavaString() {
         ImmutableString str = new ArrayString("coast");
-        java.lang.String javaStr = "coast";
+        String javaStr = "coast";
 
         Assertions.assertFalse(str.equals(javaStr));
     }
@@ -637,12 +637,12 @@ class ArrayStringTests {
         char[] chars = {'l', 'a', 'n', 'd'};
         ImmutableString str = new ArrayString(chars);
 
-        Assertions.assertEquals(new java.lang.String(chars), str.toString());
+        Assertions.assertEquals(new String(chars), str.toString());
     }
 
     @Test
     void convertFromAndToAJavaString() {
-        java.lang.String javaStr = "stone";
+        String javaStr = "stone";
         ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertEquals(javaStr, str.toString());
