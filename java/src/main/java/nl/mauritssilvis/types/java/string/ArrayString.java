@@ -27,7 +27,7 @@ public class ArrayString implements ImmutableString {
     }
 
     public ArrayString(String str) {
-        chars = str.toCharArray();
+        chars = str.toCharArray().clone();
         length = chars.length;
     }
 
