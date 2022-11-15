@@ -1,6 +1,6 @@
 # Types > Java > String
 
-> The string data type, implemented in Java
+> String data types, implemented in Java
 
 ## Introduction
 
@@ -12,25 +12,28 @@ General information about the string data type can be found in the [string secti
 
 ## 1. Implementations
 
-I focus on immutable string types that implement the interface from the file [String.java](String.java):
+### 1.1 Immutable strings
+
+First, I focus on immutable string types that implement the interface from the file [ImmutableString.java](ImmutableString.java):
 
 ```java
 package nl.mauritssilvis.types.java.string;
 
-public interface String {
-    char charAt(int index);
+public interface ImmutableString {
+    int getLength();
 
     boolean isEmpty();
 
-    int length();
+    char getChar(int index);
 
     char[] toCharArray();
 }
 ```
 
-Objects of this type allow for random access of the characters they contain, know about their length and can be converted to character arrays.
+Objects of the above type know about their length, allow for random access of the characters they contain and can be converted to character arrays.
+None of the supplied methods can change an object's contents.
 
-### 1.1 An array of characters
+#### 1.1.1 An array of characters
 
 One of the ways in which the above immutable string interface can be implemented relies on the use of an array of characters. Such an implementation is provided in the file [ArrayString.java](ArrayString.java), which in a condensed form looks as follows:
 
@@ -39,13 +42,14 @@ package nl.mauritssilvis.types.java.string;
 
 // Import statements
 
-public class ArrayString implements String {
+public class ArrayString implements ImmutableString {
     private final char[] chars;
 
-    // A no-argument constructor and constructors accepting char[] or String objects
+    // A no-argument constructor and constructors accepting
+    // char[], ImmutableString or regular Java String objects
 
-    // Methods implementing the String interface 
-    
+    // Methods implementing the ImmutableString interface 
+
     // Methods overriding some methods of the Object class
 }
 ```
