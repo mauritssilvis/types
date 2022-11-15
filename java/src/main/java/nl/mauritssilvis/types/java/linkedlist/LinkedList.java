@@ -5,10 +5,10 @@
 
 package nl.mauritssilvis.types.java.linkedlist;
 
-public interface LinkedList<T> {
-    void add(T element);
+public interface LinkedList<E> {
+    void add(E element);
 
-    T get(int index);
+    E get(int index);
 
-    void set(int index, T element);
+    void set(int index, E element);
 }

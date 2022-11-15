@@ -8,14 +8,14 @@ package nl.mauritssilvis.types.java.linkedlist;
 import nl.mauritssilvis.types.java.node.ForwardNode;
 import nl.mauritssilvis.types.java.node.Node;
 
-public class SinglyLinkedNodeList<T> implements LinkedList<T> {
+public class SinglyLinkedNodeList<E> implements LinkedList<E> {
     private int size;
-    private ForwardNode<T> head;
-    private ForwardNode<T> tail;
+    private ForwardNode<E> head;
+    private ForwardNode<E> tail;
 
     @Override
-    public void add(T element) {
-        ForwardNode<T> newNode = new SinglyLinkedNode<>(element);
+    public void add(E element) {
+        ForwardNode<E> newNode = new SinglyLinkedNode<>(element);
 
         if (size == 0) {
             head = newNode;
@@ -29,21 +29,21 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
     }
 
     @Override
-    public T get(int index) {
-        Node<T> node = getNode(index);
+    public E get(int index) {
+        Node<E> node = getNode(index);
         return node.getData();
     }
 
     @Override
-    public void set(int index, T element) {
-        Node<T> node = getNode(index);
+    public void set(int index, E element) {
+        Node<E> node = getNode(index);
         node.setData(element);
     }
 
-    private ForwardNode<T> getNode(int index) {
+    private ForwardNode<E> getNode(int index) {
         verifyIndex(index);
 
-        ForwardNode<T> node = head;
+        ForwardNode<E> node = head;
 
         for (int i = 1; i < index; i++) {
             node = node.getNext();
