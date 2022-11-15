@@ -7,7 +7,7 @@ package nl.mauritssilvis.types.java.string;
 
 import java.util.Arrays;
 
-public class ArrayString implements String {
+public class ArrayString implements ImmutableString {
     private final char[] chars;
 
     public ArrayString() {
@@ -18,7 +18,7 @@ public class ArrayString implements String {
         this.chars = chars.clone();
     }
 
-    public ArrayString(String str) {
+    public ArrayString(ImmutableString str) {
         chars = new char[str.getLength()];
 
         for (int i = 0; i < chars.length; i++) {
@@ -66,7 +66,7 @@ public class ArrayString implements String {
             return true;
         }
 
-        if (!(obj instanceof String str)) {
+        if (!(obj instanceof ImmutableString str)) {
             return false;
         }
 

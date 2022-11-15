@@ -5,7 +5,7 @@
 
 package nl.mauritssilvis.types.java.string;
 
-public interface String {
+public interface ImmutableString {
     int getLength();
 
     boolean isEmpty();

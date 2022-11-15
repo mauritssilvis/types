@@ -19,7 +19,7 @@ class ArrayStringTests {
 
     @Test
     void createAnEmptyString() {
-        String str = new ArrayString();
+        ImmutableString str = new ArrayString();
 
         Assertions.assertEquals(0, str.getLength());
     }
@@ -39,7 +39,7 @@ class ArrayStringTests {
     @Test
     void storeZeroCharacters() {
         char[] chars = {};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertEquals(chars.length, str.getLength());
     }
@@ -47,7 +47,7 @@ class ArrayStringTests {
     @Test
     void storeAllCharacters() {
         char[] chars = {'m', 'o', 'o', 'n'};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertAll(
                 () -> Assertions.assertEquals(chars.length, str.getLength()),
@@ -61,7 +61,7 @@ class ArrayStringTests {
     @Test
     void storeAnIndependentCopyOfTheCharacters() {
         char[] chars = {'s', 'u', 'n'};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         int index = 1;
         chars[index] = 'o';
@@ -73,8 +73,8 @@ class ArrayStringTests {
     void storeZeroCharactersLikeAnEmptyString() {
         char[] chars = {};
 
-        String str1 = new ArrayString(chars);
-        String str2 = new ArrayString();
+        ImmutableString str1 = new ArrayString(chars);
+        ImmutableString str2 = new ArrayString();
 
         Assertions.assertEquals(str1, str2);
     }
@@ -84,7 +84,7 @@ class ArrayStringTests {
         char[] chars = {};
 
         java.lang.String javaStr = new java.lang.String(chars);
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertEquals(javaStr.length(), str.getLength());
     }
@@ -94,7 +94,7 @@ class ArrayStringTests {
         char[] chars = {'s', 't', 'a', 'r'};
 
         java.lang.String javaStr = new java.lang.String(chars);
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertAll(
                 () -> Assertions.assertEquals(javaStr.length(), str.getLength()),
@@ -108,7 +108,7 @@ class ArrayStringTests {
     @Test
     void acceptAnEmptyString() {
         char[] chars = {};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertDoesNotThrow(() -> new ArrayString(str));
     }
@@ -116,7 +116,7 @@ class ArrayStringTests {
     @Test
     void acceptANonEmptyString() {
         char[] chars = {'c', 'l', 'o', 'u', 'd'};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertDoesNotThrow(() -> new ArrayString(str));
     }
@@ -125,8 +125,8 @@ class ArrayStringTests {
     void storeAnEmptyString() {
         char[] chars = {};
 
-        String str1 = new ArrayString(chars);
-        String str2 = new ArrayString(str1);
+        ImmutableString str1 = new ArrayString(chars);
+        ImmutableString str2 = new ArrayString(str1);
 
         Assertions.assertAll(
                 () -> Assertions.assertNotSame(str1, str2),
@@ -138,8 +138,8 @@ class ArrayStringTests {
     void storeANonEmptyString() {
         char[] chars = {'b', 'i', 'r', 'd'};
 
-        String str1 = new ArrayString(chars);
-        String str2 = new ArrayString(str1);
+        ImmutableString str1 = new ArrayString(chars);
+        ImmutableString str2 = new ArrayString(str1);
 
         Assertions.assertAll(
                 () -> Assertions.assertNotSame(str1, str2),
@@ -150,10 +150,10 @@ class ArrayStringTests {
     @Test
     void storeAnEmptyStringLikeAnEmptyString() {
         char[] chars = {};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
-        String str1 = new ArrayString(str);
-        String str2 = new ArrayString();
+        ImmutableString str1 = new ArrayString(str);
+        ImmutableString str2 = new ArrayString();
 
         Assertions.assertEquals(str1, str2);
     }
@@ -161,10 +161,10 @@ class ArrayStringTests {
     @Test
     void getEqualStringsFromEmptyCharacterArraysAndStrings() {
         char[] chars = {};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
-        String str1 = new ArrayString(chars);
-        String str2 = new ArrayString(str);
+        ImmutableString str1 = new ArrayString(chars);
+        ImmutableString str2 = new ArrayString(str);
 
         Assertions.assertEquals(str1, str2);
     }
@@ -172,10 +172,10 @@ class ArrayStringTests {
     @Test
     void getEqualStringsFromNonEmptyCharacterArraysAndStrings() {
         char[] chars = {'s', 'k', 'y'};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
-        String str1 = new ArrayString(chars);
-        String str2 = new ArrayString(str);
+        ImmutableString str1 = new ArrayString(chars);
+        ImmutableString str2 = new ArrayString(str);
 
         Assertions.assertEquals(str1, str2);
     }
@@ -195,7 +195,7 @@ class ArrayStringTests {
     @Test
     void storeAnEmptyJavaString() {
         java.lang.String javaStr = "";
-        String str = new ArrayString(javaStr);
+        ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertEquals(0, str.getLength());
     }
@@ -203,7 +203,7 @@ class ArrayStringTests {
     @Test
     void storeANonEmptyJavaString() {
         java.lang.String javaStr = "lake";
-        String str = new ArrayString(javaStr);
+        ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertAll(
                 () -> Assertions.assertEquals(javaStr.length(), str.getLength()),
@@ -219,8 +219,8 @@ class ArrayStringTests {
         char[] chars = {};
         java.lang.String javaStr = new java.lang.String(chars);
 
-        String str1 = new ArrayString(javaStr);
-        String str2 = new ArrayString();
+        ImmutableString str1 = new ArrayString(javaStr);
+        ImmutableString str2 = new ArrayString();
 
         Assertions.assertEquals(str1, str2);
     }
@@ -230,8 +230,8 @@ class ArrayStringTests {
         char[] chars = {};
         java.lang.String javaStr = new java.lang.String(chars);
 
-        String str1 = new ArrayString(chars);
-        String str2 = new ArrayString(javaStr);
+        ImmutableString str1 = new ArrayString(chars);
+        ImmutableString str2 = new ArrayString(javaStr);
 
         Assertions.assertEquals(str1, str2);
     }
@@ -241,8 +241,8 @@ class ArrayStringTests {
         char[] chars = {'o', 'c', 'e', 'a', 'n'};
         java.lang.String javaStr = new java.lang.String(chars);
 
-        String str1 = new ArrayString(chars);
-        String str2 = new ArrayString(javaStr);
+        ImmutableString str1 = new ArrayString(chars);
+        ImmutableString str2 = new ArrayString(javaStr);
 
         Assertions.assertEquals(str1, str2);
     }
@@ -251,11 +251,11 @@ class ArrayStringTests {
     void getEqualStringsFromEmptyStringsAndJavaStrings() {
         char[] chars = {};
 
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
         java.lang.String javaStr = new java.lang.String(chars);
 
-        String str1 = new ArrayString(str);
-        String str2 = new ArrayString(javaStr);
+        ImmutableString str1 = new ArrayString(str);
+        ImmutableString str2 = new ArrayString(javaStr);
 
         Assertions.assertEquals(str1, str2);
     }
@@ -264,11 +264,11 @@ class ArrayStringTests {
     void getEqualStringsFromNonEmptyStringsAndJavaStrings() {
         char[] chars = {'s', 'e', 'a'};
 
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
         java.lang.String javaStr = new java.lang.String(chars);
 
-        String str1 = new ArrayString(str);
-        String str2 = new ArrayString(javaStr);
+        ImmutableString str1 = new ArrayString(str);
+        ImmutableString str2 = new ArrayString(javaStr);
 
         Assertions.assertEquals(str1, str2);
     }
@@ -276,7 +276,7 @@ class ArrayStringTests {
     @Test
     void getTheLengthOfAZeroCharacterString() {
         char[] chars = {};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertEquals(chars.length, str.getLength());
     }
@@ -284,7 +284,7 @@ class ArrayStringTests {
     @Test
     void getTheLengthOfAFourCharacterString() {
         char[] chars = {'t', 'r', 'e', 'e'};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertEquals(chars.length, str.getLength());
     }
@@ -292,14 +292,14 @@ class ArrayStringTests {
     @Test
     void getTheSameLength() {
         java.lang.String javaStr = "forest";
-        String str = new ArrayString(javaStr);
+        ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertEquals(javaStr.length(), str.getLength());
     }
 
     @Test
     void evaluatesAsEmptyForAnEmptyString() {
-        String str = new ArrayString();
+        ImmutableString str = new ArrayString();
 
         Assertions.assertTrue(str.isEmpty());
     }
@@ -307,7 +307,7 @@ class ArrayStringTests {
     @Test
     void evaluatesAsEmptyForAnEmptyCharacterArray() {
         char[] chars = {};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertTrue(str.isEmpty());
     }
@@ -315,7 +315,7 @@ class ArrayStringTests {
     @Test
     void evaluatesAsNonEmptyForANonEmptyCharacterArray() {
         char[] chars = {'l', 'a', 'k', 'e'};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertFalse(str.isEmpty());
     }
@@ -323,7 +323,7 @@ class ArrayStringTests {
     @Test
     void evaluatesAsEmptyForAnEmptyJavaString() {
         java.lang.String javaStr = "";
-        String str = new ArrayString(javaStr);
+        ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertTrue(str.isEmpty());
     }
@@ -331,14 +331,14 @@ class ArrayStringTests {
     @Test
     void evaluatesAsNonEmptyForANonEmptyJavaString() {
         java.lang.String javaStr = "ocean";
-        String str = new ArrayString(javaStr);
+        ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertFalse(str.isEmpty());
     }
 
     @Test
     void doNotGetACharacterWithANegativeIndex() {
-        String str = new ArrayString("valley");
+        ImmutableString str = new ArrayString("valley");
 
         int index = -1;
 
@@ -347,7 +347,7 @@ class ArrayStringTests {
 
     @Test
     void doNotGetACharacterBeyondTheStringLength() {
-        String str = new ArrayString("mountain");
+        ImmutableString str = new ArrayString("mountain");
 
         int index = str.getLength();
 
@@ -357,7 +357,7 @@ class ArrayStringTests {
     @Test
     void getEachCharacter() {
         char[] chars = {'h', 'i', 'l', 'l'};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertAll(
                 () -> Assertions.assertEquals(chars[0], str.getChar(0)),
@@ -372,7 +372,7 @@ class ArrayStringTests {
         char[] chars = {'p', 'l', 'a', 'i', 'n'};
 
         java.lang.String javaStr = new java.lang.String(chars);
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertAll(
                 () -> Assertions.assertEquals(javaStr.charAt(0), str.getChar(0)),
@@ -386,7 +386,7 @@ class ArrayStringTests {
     @Test
     void convertFromAndToAnEmptyCharacterArray() {
         char[] chars = {};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertEquals(0, str.toCharArray().length);
     }
@@ -394,7 +394,7 @@ class ArrayStringTests {
     @Test
     void convertFromAndToAFourCharacterArray() {
         char[] charsIn = {'w', 'a', 'v', 'e'};
-        String str = new ArrayString(charsIn);
+        ImmutableString str = new ArrayString(charsIn);
 
         char[] charsOut = str.toCharArray();
 
@@ -410,7 +410,7 @@ class ArrayStringTests {
     @Test
     void retrieveAnIndependentCopyOfTheCharacters() {
         char[] charsIn = {'s', 'e', 'a'};
-        String str = new ArrayString(charsIn);
+        ImmutableString str = new ArrayString(charsIn);
 
         char[] charsOut = str.toCharArray();
 
@@ -422,116 +422,116 @@ class ArrayStringTests {
 
     @Test
     void doesHaveADifferentHashCodeThanNull() {
-        String str = new ArrayString("coast");
+        ImmutableString str = new ArrayString("coast");
 
         Assertions.assertNotEquals(Objects.hashCode(null), str.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanAnEmptyString() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanItsFirstCharacter() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("c");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("c");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanItsLastCharacter() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("t");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("t");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanItsBeginning() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("co");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("co");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanItsEnding() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("ast");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("ast");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanADifferentlySizedString() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("sand");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("sand");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanADifferentStringOfTheSameSize() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("beach");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("beach");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanAStringWithSimilarCharacters() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("comet");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("comet");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesHaveADifferentHashCodeThanAnAnagram() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("costa");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("costa");
 
         Assertions.assertNotEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void hasTheSameHashCodeAsTheSameString() {
-        String str = new ArrayString("coast");
+        ImmutableString str = new ArrayString("coast");
 
         Assertions.assertEquals(str.hashCode(), str.hashCode());
     }
 
     @Test
     void hasTheSameHashCodeAsADifferentVariablePointingToTheSameString() {
-        String str1 = new ArrayString("coast");
-        String str2 = str1;
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = str1;
 
         Assertions.assertEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void hasTheSameHashCodeAsAStringWithTheSameContents() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("coast");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("coast");
 
         Assertions.assertEquals(str1.hashCode(), str2.hashCode());
     }
 
     @Test
     void doesNotEqualNull() {
-        String str = new ArrayString("coast");
+        ImmutableString str = new ArrayString("coast");
 
         Assertions.assertNotEquals(null, str);
     }
 
     @Test
     void doesNotEqualAJavaString() {
-        String str = new ArrayString("coast");
+        ImmutableString str = new ArrayString("coast");
         java.lang.String javaStr = "coast";
 
         Assertions.assertFalse(str.equals(javaStr));
@@ -539,95 +539,95 @@ class ArrayStringTests {
 
     @Test
     void doesNotEqualAnEmptyString() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesNotEqualItsFirstCharacter() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("c");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("c");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesNotEqualItsLastCharacter() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("t");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("t");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesNotEqualItsBeginning() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("co");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("co");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesNotEqualItsEnding() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("ast");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("ast");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesNotEqualADifferentlySizedString() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("sand");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("sand");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesNotEqualADifferentStringOfTheSameSize() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("beach");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("beach");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesNotEqualAStringWithSimilarCharacters() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("comet");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("comet");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesNotEqualAnAnagram() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("costa");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("costa");
 
         Assertions.assertNotEquals(str1, str2);
     }
 
     @Test
     void doesEqualTheSameString() {
-        String str = new ArrayString("coast");
+        ImmutableString str = new ArrayString("coast");
 
         Assertions.assertEquals(str, str);
     }
 
     @Test
     void doesEqualADifferentVariablePointingToTheSameString() {
-        String str1 = new ArrayString("coast");
-        String str2 = str1;
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = str1;
 
         Assertions.assertEquals(str1, str2);
     }
 
     @Test
     void doesEqualAStringWithTheSameContents() {
-        String str1 = new ArrayString("coast");
-        String str2 = new ArrayString("coast");
+        ImmutableString str1 = new ArrayString("coast");
+        ImmutableString str2 = new ArrayString("coast");
 
         Assertions.assertEquals(str1, str2);
     }
@@ -635,7 +635,7 @@ class ArrayStringTests {
     @Test
     void convertFromACharacterArrayToAJavaString() {
         char[] chars = {'l', 'a', 'n', 'd'};
-        String str = new ArrayString(chars);
+        ImmutableString str = new ArrayString(chars);
 
         Assertions.assertEquals(new java.lang.String(chars), str.toString());
     }
@@ -643,7 +643,7 @@ class ArrayStringTests {
     @Test
     void convertFromAndToAJavaString() {
         java.lang.String javaStr = "stone";
-        String str = new ArrayString(javaStr);
+        ImmutableString str = new ArrayString(javaStr);
 
         Assertions.assertEquals(javaStr, str.toString());
     }
