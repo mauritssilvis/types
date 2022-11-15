@@ -9,31 +9,36 @@ import java.util.Arrays;
 
 public class ArrayString implements ImmutableString {
     private final char[] chars;
+    private final int length;
 
     public ArrayString() {
         chars = new char[0];
+        length = 0;
     }
 
     public ArrayString(char[] chars) {
         this.chars = chars.clone();
+        length = chars.length;
     }
 
     public ArrayString(ImmutableString str) {
         chars = str.toCharArray();
+        length = chars.length;
     }
 
     public ArrayString(String str) {
         chars = str.toCharArray();
+        length = chars.length;
     }
 
     @Override
     public int getLength() {
-        return chars.length;
+        return length;
     }
 
     @Override
     public boolean isEmpty() {
-        return chars.length == 0;
+        return length == 0;
     }
 
     @Override
@@ -62,11 +67,11 @@ public class ArrayString implements ImmutableString {
             return false;
         }
 
-        if (chars.length != str.getLength()) {
+        if (length != str.getLength()) {
             return false;
         }
 
-        for (int i = 0; i < chars.length; i++) {
+        for (int i = 0; i < length; i++) {
             if (chars[i] != str.getChar(i)) {
                 return false;
             }
