@@ -26,6 +26,11 @@ public class SinglyLinkedNode<T> implements ForwardNode<T> {
     }
 
     @Override
+    public boolean hasNext() {
+        return next != null;
+    }
+
+    @Override
     public ForwardNode<T> getNext() {
         return next;
     }

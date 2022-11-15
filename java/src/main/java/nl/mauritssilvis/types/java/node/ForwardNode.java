@@ -6,6 +6,8 @@
 package nl.mauritssilvis.types.java.node;
 
 public interface ForwardNode<T> extends Node<T> {
+    boolean hasNext();
+
     ForwardNode<T> getNext();
 
     void setNext(ForwardNode<T> next);

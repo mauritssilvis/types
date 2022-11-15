@@ -45,6 +45,26 @@ class SinglyLinkedNodeTests {
     }
 
     @Test
+    void doesNotHaveNext() {
+        int data = 3;
+        ForwardNode<Integer> node = new SinglyLinkedNode<>(data);
+
+        Assertions.assertFalse(node.hasNext());
+    }
+
+    @Test
+    void doesHaveNext() {
+        int nextData = 8;
+        ForwardNode<Integer> nextNode = new SinglyLinkedNode<>(nextData);
+
+        int data = -3;
+        ForwardNode<Integer> node = new SinglyLinkedNode<>(data);
+        node.setNext(nextNode);
+
+        Assertions.assertTrue(node.hasNext());
+    }
+
+    @Test
     void setNext() {
         int data = 9;
         ForwardNode<Integer> node = new SinglyLinkedNode<>(data);
