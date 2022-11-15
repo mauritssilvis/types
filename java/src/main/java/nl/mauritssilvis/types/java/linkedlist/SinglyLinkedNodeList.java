@@ -11,6 +11,7 @@ import nl.mauritssilvis.types.java.node.Node;
 public class SinglyLinkedNodeList<T> implements LinkedList<T> {
     private int size;
     private ForwardNode<T> head;
+    private ForwardNode<T> tail;
 
     @Override
     public void add(T element) {
@@ -18,9 +19,10 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
 
         if (size == 0) {
             head = newNode;
+            tail = newNode;
         } else {
-            ForwardNode<T> lastNode = getNode(size - 1);
-            lastNode.setNext(newNode);
+            tail.setNext(newNode);
+            tail = newNode;
         }
 
         size++;
