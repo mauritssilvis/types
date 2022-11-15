@@ -7,46 +7,43 @@ package nl.mauritssilvis.types.java.string;
 
 import java.util.Arrays;
 
-public class ArrayString implements String {
+public class ArrayString implements ImmutableString {
     private final char[] chars;
+    private final int length;
 
     public ArrayString() {
         chars = new char[0];
+        length = 0;
     }
 
     public ArrayString(char[] chars) {
         this.chars = chars.clone();
+        length = chars.length;
+    }
+
+    public ArrayString(ImmutableString str) {
+        chars = str.toCharArray();
+        length = chars.length;
     }
 
     public ArrayString(String str) {
-        chars = new char[str.length()];
-
-        for (int i = 0; i < chars.length; i++) {
-            chars[i] = str.charAt(i);
-        }
-    }
-
-    public ArrayString(java.lang.String str) {
-        chars = new char[str.length()];
-
-        for (int i = 0; i < chars.length; i++) {
-            chars[i] = str.charAt(i);
-        }
+        chars = str.toCharArray().clone();
+        length = chars.length;
     }
 
     @Override
-    public char charAt(int index) {
-        return chars[index];
+    public int getLength() {
+        return length;
     }
 
     @Override
     public boolean isEmpty() {
-        return chars.length == 0;
+        return length == 0;
     }
 
     @Override
-    public int length() {
-        return chars.length;
+    public char getChar(int index) {
+        return chars[index];
     }
 
     @Override
@@ -66,16 +63,16 @@ public class ArrayString implements String {
             return true;
         }
 
-        if (!(obj instanceof String str)) {
+        if (!(obj instanceof ImmutableString str)) {
             return false;
         }
 
-        if (chars.length != str.length()) {
+        if (length != str.getLength()) {
             return false;
         }
 
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] != str.charAt(i)) {
+        for (int i = 0; i < length; i++) {
+            if (chars[i] != str.getChar(i)) {
                 return false;
             }
         }
@@ -84,7 +81,7 @@ public class ArrayString implements String {
     }
 
     @Override
-    public java.lang.String toString() {
-        return new java.lang.String(chars);
+    public String toString() {
+        return new String(chars.clone());
     }
 }

@@ -5,12 +5,12 @@
 
 package nl.mauritssilvis.types.java.string;
 
-public interface String {
-    char charAt(int index);
+public interface ImmutableString {
+    int getLength();
 
     boolean isEmpty();
 
-    int length();
+    char getChar(int index);
 
     char[] toCharArray();
 }
