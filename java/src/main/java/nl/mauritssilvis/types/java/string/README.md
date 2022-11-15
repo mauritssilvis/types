@@ -1,6 +1,6 @@
 # Types > Java > String
 
-> The string data type, implemented in Java
+> String data types, implemented in Java
 
 ## Introduction
 
@@ -31,7 +31,7 @@ public interface ImmutableString {
 ```
 
 Objects of the above type know about their length, allow for random access of the characters they contain and can be converted to character arrays.
-No methods are supplied that can change an object's contents.
+None of the supplied methods can change an object's contents.
 
 #### 1.1.1 An array of characters
 
