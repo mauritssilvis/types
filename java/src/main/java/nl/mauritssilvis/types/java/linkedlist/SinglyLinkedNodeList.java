@@ -6,6 +6,7 @@
 package nl.mauritssilvis.types.java.linkedlist;
 
 import nl.mauritssilvis.types.java.node.ForwardNode;
+import nl.mauritssilvis.types.java.node.Node;
 
 public class SinglyLinkedNodeList<T> implements LinkedList<T> {
     private int size;
@@ -27,21 +28,19 @@ public class SinglyLinkedNodeList<T> implements LinkedList<T> {
 
     @Override
     public T get(int index) {
-        verifyIndex(index);
-
-        ForwardNode<T> node = getNode(index);
+        Node<T> node = getNode(index);
         return node.getData();
     }
 
     @Override
     public void set(int index, T element) {
-        verifyIndex(index);
-
-        ForwardNode<T> node = getNode(index);
+        Node<T> node = getNode(index);
         node.setData(element);
     }
 
     private ForwardNode<T> getNode(int index) {
+        verifyIndex(index);
+
         ForwardNode<T> node = head;
 
         for (int i = 1; i < index; i++) {
