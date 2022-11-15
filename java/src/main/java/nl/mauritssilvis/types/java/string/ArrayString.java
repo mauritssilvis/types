@@ -82,6 +82,6 @@ public class ArrayString implements ImmutableString {
 
     @Override
     public String toString() {
-        return new String(chars.clone());
+        return new String(toCharArray());
     }
 }
