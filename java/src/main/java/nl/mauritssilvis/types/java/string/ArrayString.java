@@ -19,19 +19,11 @@ public class ArrayString implements ImmutableString {
     }
 
     public ArrayString(ImmutableString str) {
-        chars = new char[str.getLength()];
-
-        for (int i = 0; i < chars.length; i++) {
-            chars[i] = str.getChar(i);
-        }
+        chars = str.toCharArray();
     }
 
     public ArrayString(String str) {
-        chars = new char[str.length()];
-
-        for (int i = 0; i < chars.length; i++) {
-            chars[i] = str.charAt(i);
-        }
+        chars = str.toCharArray();
     }
 
     @Override
