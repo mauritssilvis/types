@@ -35,8 +35,8 @@ public class ArrayString implements String {
     }
 
     @Override
-    public char getChar(int index) {
-        return chars[index];
+    public int getLength() {
+        return chars.length;
     }
 
     @Override
@@ -45,8 +45,8 @@ public class ArrayString implements String {
     }
 
     @Override
-    public int getLength() {
-        return chars.length;
+    public char getChar(int index) {
+        return chars[index];
     }
 
     @Override

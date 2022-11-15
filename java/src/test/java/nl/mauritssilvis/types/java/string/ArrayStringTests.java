@@ -274,6 +274,69 @@ class ArrayStringTests {
     }
 
     @Test
+    void getTheLengthOfAZeroCharacterString() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(chars.length, str.getLength());
+    }
+
+    @Test
+    void getTheLengthOfAFourCharacterString() {
+        char[] chars = {'t', 'r', 'e', 'e'};
+        String str = new ArrayString(chars);
+
+        Assertions.assertEquals(chars.length, str.getLength());
+    }
+
+    @Test
+    void getTheSameLength() {
+        java.lang.String javaStr = "forest";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertEquals(javaStr.length(), str.getLength());
+    }
+
+    @Test
+    void evaluatesAsEmptyForAnEmptyString() {
+        String str = new ArrayString();
+
+        Assertions.assertTrue(str.isEmpty());
+    }
+
+    @Test
+    void evaluatesAsEmptyForAnEmptyCharacterArray() {
+        char[] chars = {};
+        String str = new ArrayString(chars);
+
+        Assertions.assertTrue(str.isEmpty());
+    }
+
+    @Test
+    void evaluatesAsNonEmptyForANonEmptyCharacterArray() {
+        char[] chars = {'l', 'a', 'k', 'e'};
+        String str = new ArrayString(chars);
+
+        Assertions.assertFalse(str.isEmpty());
+    }
+
+    @Test
+    void evaluatesAsEmptyForAnEmptyJavaString() {
+        java.lang.String javaStr = "";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertTrue(str.isEmpty());
+    }
+
+    @Test
+    void evaluatesAsNonEmptyForANonEmptyJavaString() {
+        java.lang.String javaStr = "ocean";
+        String str = new ArrayString(javaStr);
+
+        Assertions.assertFalse(str.isEmpty());
+    }
+
+    @Test
     void doNotGetACharacterWithANegativeIndex() {
         String str = new ArrayString("valley");
 
@@ -318,69 +381,6 @@ class ArrayStringTests {
                 () -> Assertions.assertEquals(javaStr.charAt(3), str.getChar(3)),
                 () -> Assertions.assertEquals(javaStr.charAt(4), str.getChar(4))
         );
-    }
-
-    @Test
-    void evaluatesAsEmptyForAnEmptyString() {
-        String str = new ArrayString();
-
-        Assertions.assertTrue(str.isEmpty());
-    }
-
-    @Test
-    void evaluatesAsEmptyForAnEmptyCharacterArray() {
-        char[] chars = {};
-        String str = new ArrayString(chars);
-
-        Assertions.assertTrue(str.isEmpty());
-    }
-
-    @Test
-    void evaluatesAsNonEmptyForANonEmptyCharacterArray() {
-        char[] chars = {'l', 'a', 'k', 'e'};
-        String str = new ArrayString(chars);
-
-        Assertions.assertFalse(str.isEmpty());
-    }
-
-    @Test
-    void evaluatesAsEmptyForAnEmptyJavaString() {
-        java.lang.String javaStr = "";
-        String str = new ArrayString(javaStr);
-
-        Assertions.assertTrue(str.isEmpty());
-    }
-
-    @Test
-    void evaluatesAsNonEmptyForANonEmptyJavaString() {
-        java.lang.String javaStr = "ocean";
-        String str = new ArrayString(javaStr);
-
-        Assertions.assertFalse(str.isEmpty());
-    }
-
-    @Test
-    void getTheLengthOfAZeroCharacterString() {
-        char[] chars = {};
-        String str = new ArrayString(chars);
-
-        Assertions.assertEquals(chars.length, str.getLength());
-    }
-
-    @Test
-    void getTheLengthOfAFourCharacterString() {
-        char[] chars = {'t', 'r', 'e', 'e'};
-        String str = new ArrayString(chars);
-
-        Assertions.assertEquals(chars.length, str.getLength());
-    }
-
-    @Test
-    void getTheSameLength() {
-        java.lang.String javaStr = "forest";
-        String str = new ArrayString(javaStr);
-
-        Assertions.assertEquals(javaStr.length(), str.getLength());
     }
 
     @Test

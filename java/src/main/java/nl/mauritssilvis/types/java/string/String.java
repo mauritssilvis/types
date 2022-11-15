@@ -6,11 +6,11 @@
 package nl.mauritssilvis.types.java.string;
 
 public interface String {
-    char getChar(int index);
+    int getLength();
 
     boolean isEmpty();
 
-    int getLength();
+    char getChar(int index);
 
     char[] toCharArray();
 }
