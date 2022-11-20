@@ -5,10 +5,6 @@
 
 package nl.mauritssilvis.types.java.array;
 
-public interface FixedSizeArray<E> {
-    int getLength();
-
-    E get(int index);
-
+public interface MutableFixedSizeArray<E> extends ImmutableFixedSizeArray<E> {
     void set(int index, E element);
 }
