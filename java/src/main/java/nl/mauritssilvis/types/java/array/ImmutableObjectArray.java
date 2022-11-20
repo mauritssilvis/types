@@ -7,17 +7,20 @@ package nl.mauritssilvis.types.java.array;
 
 public class ImmutableObjectArray implements ImmutableFixedSizeArray<Object> {
     private final Object[] elements;
+    private final int length;
 
     public ImmutableObjectArray(Object[] elements) {
+        this.elements = elements.clone();
+        length = elements.length;
     }
 
     @Override
     public int getLength() {
-        return 0;
+        return length;
     }
 
     @Override
     public Object get(int index) {
-        return null;
+        return elements[index];
     }
 }
