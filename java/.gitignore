@@ -168,3 +168,6 @@ gradle-app.setting
 *.hprof
 
 # End of https://gitignore.io/api/java,gradle,intellij
+
+### Gradle refreshVersions ###
+versions.properties
