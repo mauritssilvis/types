@@ -12,10 +12,9 @@ Below, I give an [overview](#overview) of the available implementations.
 
 Currently, (partial) Java implementations of the following data types and structures are available:
 
-| Data type or structure                                                 |
-|------------------------------------------------------------------------|
-| [String](src/main/java/nl/mauritssilvis/types/java/string)             |
-| [• Immutable string](src/main/java/nl/mauritssilvis/types/java/string) |
+- [String](src/main/java/nl/mauritssilvis/types/java/string)
+
+  - [Immutable string](src/main/java/nl/mauritssilvis/types/java/string)
 
 ## License
 
