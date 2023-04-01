@@ -1,10 +1,10 @@
 # Types
 
-> A collection of data types and structures, implemented in different programming languages
+> A collection of data types and structures
 
 ## Introduction
 
-With this project, I provide implementations of commonly used data types and structures in different programming languages.
+With this educational project, I provide implementations of commonly used data types and structures.
 
 Below, I first describe the [aims](#1-aims) I have with the current project.
 I then provide an [overview](#2-overview) of the data type and structure implementations that are currently available.
@@ -28,7 +28,7 @@ Finally, I aim to:
 
 ## 2. Overview
 
-Currently, implementations of commonly used data types and structures are available in:
+Currently, implementations of commonly used data types and structures are available in the following languages:
 
 - [Java](java)
 

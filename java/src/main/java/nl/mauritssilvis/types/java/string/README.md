@@ -1,14 +1,14 @@
-# Types > Java > String
+# Java string types
 
-> String data types, implemented in Java
+> String data types implemented in Java
 
 ## Introduction
 
-With this part of the [Types > Java](../../../../../../../..) project, I provide implementations of the string data type in Java.
+With this part of the [Types](https://github.com/mauritssilvis/types) > [Java](../../../../../../../..) project, I provide implementations of the string data type in Java.
 
 Below, I give an overview of the different [implementations](#1-implementations) I considered.
 
-General information about the string data type can be found in the [string section](../../../../../../../../../README.md#31-string) of the general [project readme](../../../../../../../../../README.md).
+General information about the string data type can be found in the [string section](https://github.com/mauritssilvis/types#31-string) of the [Types](https://github.com/mauritssilvis/types) readme.
 
 ## 1. Implementations
 

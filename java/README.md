@@ -1,14 +1,14 @@
-# Types > Java
+# Java types
 
-> A collection of data types and structures, implemented in Java
+> A collection of data types and structures implemented in Java
 
 ## Introduction
 
 With this part of the [Types](https://github.com/mauritssilvis/types) project, I provide implementations of commonly used data types and structures in Java.
 
-Below, I give an [overview](#1-overview) of the available Java implementations of data types and structures.
+Below, I give an [overview](#overview) of the available implementations.
 
-## 1. Overview
+## Overview
 
 Currently, (partial) Java implementations of the following data types and structures are available:
 
