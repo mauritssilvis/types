@@ -7,8 +7,8 @@ plugins {
     java
 }
 
-group = "nl.mauritssilvis"
-version = "1.0-SNAPSHOT"
+group = "nl.mauritssilvis.types.java"
+version = "0.1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
