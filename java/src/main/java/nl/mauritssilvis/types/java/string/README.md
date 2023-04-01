@@ -48,7 +48,7 @@ public class ArrayString implements ImmutableString {
     // A no-argument constructor and constructors accepting
     // char[], ImmutableString or regular Java String objects
 
-    // Methods implementing the ImmutableString interface 
+    // Methods implementing the ImmutableString interface
 
     // Methods overriding some methods of the Object class
 }
