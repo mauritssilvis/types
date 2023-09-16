@@ -18,11 +18,12 @@ dependencies {
     testImplementation(libs.junit.jupiter.api)
 
     testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly(libs.junit.platform.launcher)
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(20))
+        languageVersion.set(JavaLanguageVersion.of(libs.versions.java.jdk.get()))
         vendor.set(JvmVendorSpec.ADOPTIUM)
     }
 }
