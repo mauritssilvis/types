@@ -9,4 +9,4 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add a Java immutable string implementation.
+- Implement an immutable string data type in Java.
