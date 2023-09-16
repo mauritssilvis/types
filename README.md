@@ -10,6 +10,8 @@ Below, I first describe the [aims](#1-aims) I have with the current project.
 I then provide an [overview](#2-overview) of the data type and structure implementations that are currently available.
 Finally, I provide some [background information](#3-background) on the data types and structures I focus on in this project.
 
+The release history of this project is contained in the [changelog](CHANGELOG.md).
+
 ## 1. Aims
 
 My aims with this project are to:
