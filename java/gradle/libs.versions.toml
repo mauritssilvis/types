@@ -2,6 +2,8 @@
 
 [versions]
 
+java-jdk = "20"
+
 java-types = "0.1.0-SNAPSHOT"
 
 junit-jupiter = "5.9.2"

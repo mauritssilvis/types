@@ -22,7 +22,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(20))
+        languageVersion.set(JavaLanguageVersion.of(libs.versions.java.jdk.get()))
         vendor.set(JvmVendorSpec.ADOPTIUM)
     }
 }
