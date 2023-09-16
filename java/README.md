@@ -14,7 +14,7 @@ Currently, (partial) Java implementations of the following data types and struct
 
 - [String](src/main/java/nl/mauritssilvis/types/java/string)
 
-  - [Immutable string](src/main/java/nl/mauritssilvis/types/java/string)
+  - [Immutable string](src/main/java/nl/mauritssilvis/types/java/string#11-immutable-strings)
 
 ## License
 

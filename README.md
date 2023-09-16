@@ -34,10 +34,10 @@ Currently, implementations of commonly used data types and structures are availa
 
 I specifically provide the following (partial) data type and structure implementations:
 
-| Data type or structure | Java                                                       |
-|------------------------|------------------------------------------------------------|
-| String                 | [✅](java/src/main/java/nl/mauritssilvis/types/java/string) |
-| • Immutable string     | [✅](java/src/main/java/nl/mauritssilvis/types/java/string) |
+| Data type or structure | Java                                                                            |
+|------------------------|---------------------------------------------------------------------------------|
+| String                 | [✅](java/src/main/java/nl/mauritssilvis/types/java/string)                      |
+| • Immutable string     | [✅](java/src/main/java/nl/mauritssilvis/types/java/string#11-immutable-strings) |
 
 ## 3. Background
 
