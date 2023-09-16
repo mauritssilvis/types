@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Project name
+name="Types"
+
+# Project label
+label="types"
+
+# Check version
+if [ $# -eq 0 ] || [ "${1}" = "" ]; then
+    echo "Error: No version supplied."
+    exit
+fi
+
+version=${1}
+
+# Check branch
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "${branch}" != "main" ]; then
+    echo "Error: Not on main branch."
+    exit
+fi
+
+# Tag
+message="${name} ${version}"
+tag="v${version}"
+git tag -am "${message}" "${tag}"
