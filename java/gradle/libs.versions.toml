@@ -6,7 +6,7 @@ java-jdk = "20"
 
 java-types = "0.1.0-SNAPSHOT"
 
-junit-jupiter = "5.9.2"
+junit-jupiter = "5.10.0"
 
 [libraries]
 
