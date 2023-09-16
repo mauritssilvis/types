@@ -20,4 +20,4 @@ Currently, (partial) Java implementations of the following data types and struct
 
 Copyright © 2021–2023 Maurits Silvis
 
-This source code package is subject to the terms and conditions defined in the [GNU General Public License v3.0](LICENSE.md) or later.
+This source code package is subject to the terms and conditions defined in the [GNU General Public License v3.0](../LICENSE.md) or later.
