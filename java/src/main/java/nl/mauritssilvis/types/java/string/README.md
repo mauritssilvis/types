@@ -4,7 +4,7 @@
 
 ## Introduction
 
-With this part of the [Types](https://github.com/mauritssilvis/types) > [Java](../../../../../../../..) project, I provide implementations of the string data type in Java.
+With this part of the [Java types](../../../../../../../..) project, I provide implementations of the string data type in Java.
 
 Below, I give an overview of the different [implementations](#1-implementations) I considered.
 
