@@ -45,7 +45,7 @@ I specifically provide the following (partial) data type and structure implement
 
 Below, I give general information on the data types and structures I focus on in this project.
 
-### 3.1 String
+### 3.1 Strings
 
 Next to numeric types like integers and floating point numbers, strings arguably are one of the most commonly used data types in programming.
 Essentially, strings are arrays of characters.
