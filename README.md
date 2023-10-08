@@ -58,7 +58,7 @@ Since we then end up with more objects, immutability could be considered a disad
 However, consider using strings as keys for a hash map.
 If strings were mutable, you could change those keys by changing the used strings.
 The immutability of strings prevents such changes, thus preventing unexpected situations and potential bugs.
-Mutable and immutable strings, thus, both have their role.
+Mutable and immutable strings, thus, both have their advantages and disadvantages.
 
 ## License
 
