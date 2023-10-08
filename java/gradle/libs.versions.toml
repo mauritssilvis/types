@@ -2,7 +2,7 @@
 
 [versions]
 
-java-jdk = "20"
+java-jdk = "21"
 
 java-types = "0.2.0-SNAPSHOT"
 
