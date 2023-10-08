@@ -8,7 +8,7 @@ With this part of the [Java types](../../../../../../../..) project, I provide i
 
 Below, I give an overview of the different [implementations](#1-implementations) I considered.
 
-General information about the string data type can be found in the [string section](https://github.com/mauritssilvis/types#31-string) of the [Types](https://github.com/mauritssilvis/types) readme.
+General information about the string data type can be found in the [string section](../../../../../../../../../#31-string) of the [Types](../../../../../../../../..) readme.
 
 ## 1. Implementations
 

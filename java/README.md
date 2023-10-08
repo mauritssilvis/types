@@ -4,7 +4,7 @@
 
 ## Introduction
 
-With this part of the [Types](https://github.com/mauritssilvis/types) project, I provide implementations of commonly used data types and structures in Java.
+With this part of the [Types](..) project, I provide implementations of commonly used data types and structures in Java.
 
 Below, I give an [overview](#overview) of the available implementations.
 
