@@ -49,7 +49,7 @@ Below, I give general information on the data types and structures I focus on in
 
 Next to numeric types like integers and floating point numbers, strings arguably are one of the most commonly used data types in programming.
 Essentially, strings are arrays of characters.
-However, despite this seeming simplicity, strings can store everything from single words to names, email addresses, passwords and even full texts.
+However, despite this seeming simplicity, strings can store anything from single words to names, email addresses, passwords and even full texts.
 
 In many programming languages, including Java, strings are represented by immutable objects.
 Immutable objects are objects that cannot be changed once they are created.
