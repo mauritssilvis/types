@@ -9,6 +9,7 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Improve the project documentation.
 - Update the Java version from 20 to 21.
 - Update the Gradle version from 8.3 to 8.4.
 - Update the refreshVersions version from 0.60.2 to 0.60.3.
