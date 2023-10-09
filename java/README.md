@@ -8,7 +8,7 @@ With this part of the [Types](..) project, I provide implementations of commonly
 
 Below, I give an [overview](#overview) of the available implementations.
 
-## Overview
+## 1. Overview
 
 Currently, (partial) Java implementations of the following data types and structures are available:
 
