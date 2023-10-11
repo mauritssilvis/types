@@ -5,7 +5,7 @@ All notable changes to the [Types](https://github.com/mauritssilvis/types) proje
 The file format is based on [keep a changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.0] - 2023-10-11
 
 ### Changed
 
