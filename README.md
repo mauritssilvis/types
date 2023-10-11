@@ -36,20 +36,20 @@ Currently, implementations of commonly used data types and structures are availa
 
 I specifically provide the following (partial) data type and structure implementations:
 
-| Data type or structure | Java                                                                            |
-|------------------------|---------------------------------------------------------------------------------|
-| String                 | [✅](java/src/main/java/nl/mauritssilvis/types/java/string)                      |
-| • Immutable string     | [✅](java/src/main/java/nl/mauritssilvis/types/java/string#11-immutable-strings) |
+| Data type or structure | Java                                                                             |
+|------------------------|----------------------------------------------------------------------------------|
+| String                 | [✅](java/src/main/java/nl/mauritssilvis/types/java/string)                       |
+| • Immutable string     | [✅](java/src/main/java/nl/mauritssilvis/types/java/string/#11-immutable-strings) |
 
 ## 3. Background
 
-More information on the data types and structures I focus on in this project is given in the following.
+Below, I give general information on the data types and structures I focus on in this project.
 
-### 3.1 String
+### 3.1 Strings
 
 Next to numeric types like integers and floating point numbers, strings arguably are one of the most commonly used data types in programming.
 Essentially, strings are arrays of characters.
-However, despite this seeming simplicity, strings can store everything from single words to names, email addresses, codes like passwords and even full texts.
+However, despite this seeming simplicity, strings can store anything from single words to names, email addresses, passwords and even full texts.
 
 In many programming languages, including Java, strings are represented by immutable objects.
 Immutable objects are objects that cannot be changed once they are created.
@@ -58,7 +58,7 @@ Since we then end up with more objects, immutability could be considered a disad
 However, consider using strings as keys for a hash map.
 If strings were mutable, you could change those keys by changing the used strings.
 The immutability of strings prevents such changes, thus preventing unexpected situations and potential bugs.
-Mutable and immutable strings, thus, both have their role.
+Mutable and immutable strings, thus, both have their advantages and disadvantages.
 
 ## License
 

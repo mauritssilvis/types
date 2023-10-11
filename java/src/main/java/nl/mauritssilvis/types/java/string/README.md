@@ -4,11 +4,11 @@
 
 ## Introduction
 
-With this part of the [Types](https://github.com/mauritssilvis/types) > [Java](../../../../../../../..) project, I provide implementations of the string data type in Java.
+With this part of the [Java types](../../../../../../../..) project, I provide implementations of the string data type in Java.
 
 Below, I give an overview of the different [implementations](#1-implementations) I considered.
 
-General information about the string data type can be found in the [string section](https://github.com/mauritssilvis/types#31-string) of the [Types](https://github.com/mauritssilvis/types) readme.
+General information about the string data type can be found in the [Strings section](../../../../../../../../../#31-strings) of the [Types](../../../../../../../../..) readme.
 
 ## 1. Implementations
 
@@ -29,8 +29,9 @@ public interface ImmutableString {
     char[] toCharArray();
 }
 ```
+
 Objects of the above type know their length, allow random access to their characters and can be converted to character arrays.
-None of the supplied methods can change an object's contents.
+None of the methods should change (or allow for changes in) an object's contents.
 
 #### 1.1.1 An array of characters
 
@@ -43,6 +44,7 @@ package nl.mauritssilvis.types.java.string;
 // Import statements
 
 public class ArrayString implements ImmutableString {
+    // The underlying data structure: an array of characters
     private final char[] chars;
 
     // A no-argument constructor and constructors accepting
