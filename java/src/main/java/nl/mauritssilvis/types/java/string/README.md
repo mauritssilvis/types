@@ -29,8 +29,9 @@ public interface ImmutableString {
     char[] toCharArray();
 }
 ```
+
 Objects of the above type know their length, allow random access to their characters and can be converted to character arrays.
-None of the supplied methods can change an object's contents.
+None of the methods should change (or allow for changes in) an object's contents.
 
 #### 1.1.1 An array of characters
 
@@ -43,6 +44,7 @@ package nl.mauritssilvis.types.java.string;
 // Import statements
 
 public class ArrayString implements ImmutableString {
+    // The underlying data structure: an array of characters
     private final char[] chars;
 
     // A no-argument constructor and constructors accepting
