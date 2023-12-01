@@ -4,7 +4,7 @@
 
 java-jdk = "21"
 
-java-types = "0.2.1-SNAPSHOT"
+java-types = "0.2.1"
 
 junit-jupiter = "5.10.1"
 
