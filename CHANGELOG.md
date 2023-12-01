@@ -10,6 +10,7 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update the Gradle version from 8.4 to 8.5.
+- Update the JUnit version from 5.10.0 to 5.10.1.
 
 ## [0.2.0] - 2023-10-11
 
