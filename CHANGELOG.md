@@ -5,6 +5,13 @@ All notable changes to the [Types](https://github.com/mauritssilvis/types) proje
 The file format is based on [keep a changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] - 2023-12-01
+
+### Changed
+
+- Update the Gradle version from 8.4 to 8.5.
+- Update the JUnit version from 5.10.0 to 5.10.1.
+
 ## [0.2.0] - 2023-10-11
 
 ### Changed
@@ -19,3 +26,9 @@ and this project adheres to [semantic versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add a Java immutable string data type implementation.
+
+## License
+
+Copyright © 2023 Maurits Silvis
+
+This source code package is subject to the terms and conditions defined in the [GNU General Public License v3.0](LICENSE.md) or later.
