@@ -13,7 +13,7 @@ import java.util.Objects;
 
 class ArrayStringTests {
     @Test
-    void constructAnEmptyString() {
+    void acceptZeroArguments() {
         Assertions.assertDoesNotThrow((ThrowingSupplier<ArrayString>) ArrayString::new);
     }
 
